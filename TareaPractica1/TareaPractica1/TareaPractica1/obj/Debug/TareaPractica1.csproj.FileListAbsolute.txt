@@ -1,0 +1,13 @@
+C:\Users\Oscar Rolando\Documents\Visual Studio 2013\Projects\IPC2\TareaPractica1\TareaPractica1\bin\Debug\TareaPractica1.exe.config
+C:\Users\Oscar Rolando\Documents\Visual Studio 2013\Projects\IPC2\TareaPractica1\TareaPractica1\bin\Debug\TareaPractica1.exe
+C:\Users\Oscar Rolando\Documents\Visual Studio 2013\Projects\IPC2\TareaPractica1\TareaPractica1\bin\Debug\TareaPractica1.pdb
+C:\Users\Oscar Rolando\Documents\Visual Studio 2013\Projects\IPC2\TareaPractica1\TareaPractica1\obj\Debug\TareaPractica1.csprojResolveAssemblyReference.cache
+C:\Users\Oscar Rolando\Documents\Visual Studio 2013\Projects\IPC2\TareaPractica1\TareaPractica1\obj\Debug\TareaPractica1.Form1.resources
+C:\Users\Oscar Rolando\Documents\Visual Studio 2013\Projects\IPC2\TareaPractica1\TareaPractica1\obj\Debug\TareaPractica1.Form2.resources
+C:\Users\Oscar Rolando\Documents\Visual Studio 2013\Projects\IPC2\TareaPractica1\TareaPractica1\obj\Debug\TareaPractica1.Properties.Resources.resources
+C:\Users\Oscar Rolando\Documents\Visual Studio 2013\Projects\IPC2\TareaPractica1\TareaPractica1\obj\Debug\TareaPractica1.csproj.GenerateResource.Cache
+C:\Users\Oscar Rolando\Documents\Visual Studio 2013\Projects\IPC2\TareaPractica1\TareaPractica1\obj\Debug\TareaPractica1.exe
+C:\Users\Oscar Rolando\Documents\Visual Studio 2013\Projects\IPC2\TareaPractica1\TareaPractica1\obj\Debug\TareaPractica1.pdb
+C:\Users\Oscar Rolando\Desktop\IPC2\IPC2J15\TareaPractica1\TareaPractica1\TareaPractica1\bin\Debug\TareaPractica1.exe.config
+C:\Users\Oscar Rolando\Desktop\IPC2\IPC2J15\TareaPractica1\TareaPractica1\TareaPractica1\obj\Debug\TareaPractica1.exe
+C:\Users\Oscar Rolando\Desktop\IPC2\IPC2J15\TareaPractica1\TareaPractica1\TareaPractica1\obj\Debug\TareaPractica1.pdb
