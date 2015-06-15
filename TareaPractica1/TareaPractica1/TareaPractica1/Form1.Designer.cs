@@ -48,6 +48,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Bienvenido a la libreria Whizz Hard Books";
             this.label1.UseWaitCursor = true;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -153,6 +154,7 @@
             this.Name = "Form1";
             this.Text = "Librería Whizz Hard Books - Inicio";
             this.UseWaitCursor = true;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

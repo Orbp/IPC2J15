@@ -57,6 +57,31 @@ namespace TareaPractica1
             this.Hide();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            WSTareaPractica1.Service1SoapClient wsconexion = new WSTareaPractica1.Service1SoapClient();
+
+            string error = "";
+
+            bool conectado = wsconexion.ProbarConexion(ref error );
+
+            if (conectado)
+            {
+                MessageBox.Show("Conectado con la base de datos", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                MessageBox.Show(error, "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }

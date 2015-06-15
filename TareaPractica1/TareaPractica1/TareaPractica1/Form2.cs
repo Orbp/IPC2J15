@@ -12,11 +12,11 @@ namespace TareaPractica1
 {
     public partial class Form2 : Form
     {
-        string nombre;
-        int numeroexis;
-        int numeropag = new int();
-        string tema;
-        string autor;
+        string nombre="";
+        int numeroexis=0;
+        int numeropag = 0;
+        string tema="";
+        string autor="";
         bool haynombre = false;
         bool haynumexis = false;
         bool haynumpag = false;
@@ -112,32 +112,41 @@ namespace TareaPractica1
             }
 
             /*Espacio para insertar en la base de datos*/
-
-            nombre = "";
-            numeroexis = 0;
-            numeropag = 0;
-            tema = "";
-            autor = "";
-            hayautor = false;
-            haynombre = false;
-            haynumexis = false;
-            haynumpag = false;
-            haytema = false;
-            TBAutorLibro.Text = "";
-            TBNombreLibro.Text = "";
-            TBNumero_existenciaslibros.Text = "";
-            TBNumero_paginas.Text = "";
-            TBTemaLibro.Text = "";
-            if (radioButton1.Checked)
+            WSTareaPractica1.Service1SoapClient wsguardado = new WSTareaPractica1.Service1SoapClient();
+            bool agregado = wsguardado.AgregarLibro(nombre, numeroexis, numeropag, autor, tema);
+            if (agregado)
             {
-                radioButton1.Checked = false;
+                MessageBox.Show("Registro guardado", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                nombre = "";
+                numeroexis = 0;
+                numeropag = 0;
+                tema = "";
+                autor = "";
+                hayautor = false;
+                haynombre = false;
+                haynumexis = false;
+                haynumpag = false;
+                haytema = false;
+                TBAutorLibro.Text = "";
+                TBNombreLibro.Text = "";
+                TBNumero_existenciaslibros.Text = "";
+                TBNumero_paginas.Text = "";
+                TBTemaLibro.Text = "";
+                if (radioButton1.Checked)
+                {
+                    radioButton1.Checked = false;
+                }
+                if (radioButton2.Checked)
+                {
+                    radioButton2.Checked = false;
+                }
+                CBAutorLibro.Visible = false;
+                CBTemaLibro.Visible = false;
             }
-            if (radioButton2.Checked)
+            else
             {
-                radioButton2.Checked = false;
-            }
-            CBAutorLibro.Visible = false;
-            CBTemaLibro.Visible = false;
+                MessageBox.Show("No se pudo guardar el registro por problemas con la base de datos", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
         }
 
         private void BTNCancelar_Click(object sender, EventArgs e)
