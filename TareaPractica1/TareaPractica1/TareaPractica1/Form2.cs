@@ -113,7 +113,7 @@ namespace TareaPractica1
 
             /*Espacio para insertar en la base de datos*/
             WSTareaPractica1.Service1SoapClient wsguardado = new WSTareaPractica1.Service1SoapClient();
-            bool agregado = wsguardado.AgregarLibro(nombre, numeroexis, numeropag, autor, tema);
+            bool agregado = wsguardado.AgregarLibro(nombre, numeroexis, numeropag, autor, tema, numeroexis, 0, 0);
             if (agregado)
             {
                 MessageBox.Show("Registro guardado", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);

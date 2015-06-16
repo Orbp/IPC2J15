@@ -85,15 +85,26 @@ namespace TareaPractica1
             }
 
             /*Espacio para insertar en la base de datos*/
+            WSTareaPractica1.Service1SoapClient wsagregar = new WSTareaPractica1.Service1SoapClient();
+            bool agregado = wsagregar.AgregarCliente(nombre, dpi, direccion, telefono);
+            if (agregado)
+            {
+                MessageBox.Show("Registro guardado", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                nombre = "";
+                direccion = "";
+                dpi = 0;
+                telefono = 0;
+                TBDireccion.Text = "";
+                TBDpi.Text = "";
+                TBNombreCliente.Text = "";
+                TBTelefono.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("No se pudo guardar el registro por problemas en la base de datos", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            nombre = "";
-            direccion = "";
-            dpi = 0;
-            telefono = 0;
-            TBDireccion.Text = "";
-            TBDpi.Text = "";
-            TBNombreCliente.Text = "";
-            TBTelefono.Text = "";
+            
         }
     }
 }

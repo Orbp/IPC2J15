@@ -16,26 +16,16 @@ Nombre_libro VARCHAR(MAX) NOT NULL,
 Num_Existencias INT NOT NULL,
 Num_Paginas INT NOT NULL,
 Autor_libro VARCHAR(MAX) NOT NULL,
-Tema_libro VARCHAR(MAX) NOT NULL
+Tema_libro VARCHAR(MAX) NOT NULL,
+Existencia_en_libreria INT NOT NULL,
+Prestamos INT NOT NULL,
+Reserva Int NOT NULL
 )
 
 CREATE TABLE Prestamo(
 Id_Prestamo INT IDENTITY (1,1) PRIMARY KEY,
 IdCliente INT NOT NULL,
-Id_Asignacionestado INT NOT NULL,
-FOREIGN KEY (IdCliente) REFERENCES Cliente(Numero_cliente),
-FOREIGN KEY (Id_Asignacionestado) REFERENCES Asignacion_estado(Id_Asign)
-)
-
-CREATE TABLE Estado(
-Id_Estado INT IDENTITY (1,1) PRIMARY KEY,
-Nombre VARCHAR(MAX)
-)
- 
-CREATE TABLE Asignacion_estado(
-Id_Asign INT IDENTITY (1,1) PRIMARY KEY,
-Id_Estado INT NOT NULL,
 Id_Libro INT NOT NULL,
-FOREIGN KEY (Id_Estado) REFERENCES Estado(Id_Estado),
+FOREIGN KEY (IdCliente) REFERENCES Cliente(Numero_cliente),
 FOREIGN KEY (Id_Libro) REFERENCES Libro(Id_Libro)
 )

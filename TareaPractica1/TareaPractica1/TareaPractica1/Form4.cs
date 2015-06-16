@@ -26,5 +26,21 @@ namespace TareaPractica1
                 inicio.Show();
             }
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BTConsultar_Click(object sender, EventArgs e)
+        {
+            WSTareaPractica1.Service1SoapClient ws = new WSTareaPractica1.Service1SoapClient();
+            ws.busqueda(textBox1.Text);
+        }
     }
 }

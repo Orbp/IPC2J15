@@ -25,6 +25,9 @@
             <s:element minOccurs="1" maxOccurs="1" name="pnumpag" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="pautor" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="ptema" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pnumexl" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pprestamo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="preserva" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -32,6 +35,37 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="AgregarLibroResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pnombre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pdpi" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pdireccion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ptelefono" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgregarClienteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="busqueda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="busquedaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="busquedaResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -49,6 +83,18 @@
   <wsdl:message name="AgregarLibroSoapOut">
     <wsdl:part name="parameters" element="tns:AgregarLibroResponse" />
   </wsdl:message>
+  <wsdl:message name="AgregarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarCliente" />
+  </wsdl:message>
+  <wsdl:message name="AgregarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="busquedaSoapIn">
+    <wsdl:part name="parameters" element="tns:busqueda" />
+  </wsdl:message>
+  <wsdl:message name="busquedaSoapOut">
+    <wsdl:part name="parameters" element="tns:busquedaResponse" />
+  </wsdl:message>
   <wsdl:portType name="Service1Soap">
     <wsdl:operation name="ProbarConexion">
       <wsdl:input message="tns:ProbarConexionSoapIn" />
@@ -57,6 +103,14 @@
     <wsdl:operation name="AgregarLibro">
       <wsdl:input message="tns:AgregarLibroSoapIn" />
       <wsdl:output message="tns:AgregarLibroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCliente">
+      <wsdl:input message="tns:AgregarClienteSoapIn" />
+      <wsdl:output message="tns:AgregarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="busqueda">
+      <wsdl:input message="tns:busquedaSoapIn" />
+      <wsdl:output message="tns:busquedaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
@@ -79,6 +133,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AgregarCliente">
+      <soap:operation soapAction="http://tempuri.org/AgregarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busqueda">
+      <soap:operation soapAction="http://tempuri.org/busqueda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -93,6 +165,24 @@
     </wsdl:operation>
     <wsdl:operation name="AgregarLibro">
       <soap12:operation soapAction="http://tempuri.org/AgregarLibro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCliente">
+      <soap12:operation soapAction="http://tempuri.org/AgregarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busqueda">
+      <soap12:operation soapAction="http://tempuri.org/busqueda" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

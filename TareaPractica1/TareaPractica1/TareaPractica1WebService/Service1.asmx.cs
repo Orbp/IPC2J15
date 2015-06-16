@@ -4,6 +4,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Collections;
+
 
 namespace TareaPractica1WebService
 {
@@ -18,7 +20,7 @@ namespace TareaPractica1WebService
     public class Service1 : System.Web.Services.WebService
     {
         string CadenaConexion = "Data Source=OSCARROLANDO;Initial Catalog=TareaPractica1;Integrated Security=True";
-
+        
         SqlConnection conexioSql = null;
 
         [WebMethod]
@@ -48,11 +50,11 @@ namespace TareaPractica1WebService
 
 
         [WebMethod]
-        public bool AgregarLibro(string pnombre, int pnumex, int pnumpag, string pautor, string ptema)
+        public bool AgregarLibro(string pnombre, int pnumex, int pnumpag, string pautor, string ptema, int pnumexl, int pprestamo, int preserva)
         {
             SqlCommand comando = new SqlCommand();
-            comando.CommandText = "INSERT Libro (Nombre_libro, Num_Existencias, Num_Paginas, Autor_libro, Tema_libro) VALUES ('" + pnombre + "'," + pnumex +
-                "," + pnumpag + ",'" + pautor + "','" + ptema + "')";
+            comando.CommandText = "INSERT Libro (Nombre_libro, Num_Existencias, Num_Paginas, Autor_libro, Tema_libro, Existencia_en_libreria, Prestamos, Reserva) VALUES ('" + pnombre + "'," + pnumex +
+                "," + pnumpag + ",'" + pautor + "','" + ptema + "'," + pnumexl +"," + pprestamo+"," + preserva +")";
 
             conexioSql = new SqlConnection(CadenaConexion);
             comando.Connection = conexioSql;
@@ -70,10 +72,41 @@ namespace TareaPractica1WebService
         }
 
         [WebMethod]
-        public bool AgregarCliente()
+        public bool AgregarCliente(string pnombre, int pdpi, string pdireccion, int ptelefono)
         {
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "INSERT Cliente (Nombre, DPI, Direccion, Telefono) VALUES ('" + pnombre+"'," + pdpi + ",'" + pdireccion + "'," + ptelefono + ")";
+            conexioSql = new SqlConnection(CadenaConexion);
+            comando.Connection = conexioSql;
 
-            return true;
+            conexioSql.Open();
+            if (comando.ExecuteNonQuery() != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            conexioSql.Close();
+        }
+        
+        [WebMethod]
+        public bool busqueda(string nombre)
+        {
+            SqlCommand comando = new SqlCommand("select * from Libro where Nombre_libro = '" + nombre +"';");
+            conexioSql = new SqlConnection(CadenaConexion);
+            comando.Connection = conexioSql;
+            conexioSql.Open();
+            if (comando.ExecuteNonQuery() != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            conexioSql.Close();
+        }
         }
     }
-}
