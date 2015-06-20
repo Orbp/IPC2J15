@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="Proyecto.Aplicacion.master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Estilos/Estilo.css" rel="stylesheet"  type="text/css"  />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class ="wrapper col1">
+        <div id="header">
+            <div id ="logo">
+                
+                    <h1><a href="#">Quetzal Express</a></h1>
+                
+            </div>
+            <br class ="clear" />
+        </div>
+        <div class="wrapper col2">
+            <asp:ContentPlaceHolder runat="server" ID="menus"></asp:ContentPlaceHolder>
+        </div>
+
+        <div class="wrapper col5">
+            <div id="container">
+                <div id="content">
+                    <section class="content-wrapper main-content clear-fix">
+                        <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder1" />
+                    </section>
+                </div>
+            <br class="clear" />
+            </div>
+        </div>
+
+        <div class="col6">
+            <div id="footer">
+                <div id="login">
+                    
+                        <asp:Panel ID="Panel1" runat="server" HorizontalAlign ="Center" >
+                            <asp:Label ID="us" runat="server">Oscar Rolando Bernard Peralta 201220165</asp:Label>
+                            <asp:Button ID="btn_cerrar" runat="server" OnClick="btn_cerrar_Click" Text="Cerrar Sesión" Height="45px" Width="150px" />
+                        </asp:Panel>
+                    
+                </div>
+            </div>
+            <br class="clear" />
+        </div>
+    </div>
+    </form>
+</body>
+</html>
+ 
