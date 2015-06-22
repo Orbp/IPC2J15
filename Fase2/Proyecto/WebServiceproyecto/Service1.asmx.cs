@@ -181,6 +181,27 @@ namespace WebServiceproyecto
         }
 
         [WebMethod]
+        public int DevolverCasillaCliente(int pDPI)
+        {
+            int casilla = 0;
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "Select Casilla From Cliente where DPI = " + pDPI;
+            comando.Connection = conexion;
+            conexion.Open();
+            SqlDataReader lector = comando.ExecuteReader();
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    casilla = lector.GetInt32(7);
+                }
+            }
+            lector.Close();
+            conexion.Close();
+            return casilla;
+        }
+
+        [WebMethod]
         public List<string[]> ParseoCSV(string direccion)
         {
             List<string[]> datosparseados = new List<string[]>();
@@ -196,6 +217,53 @@ namespace WebServiceproyecto
                 }
             }
             return datosparseados;
+        }
+
+        [WebMethod]
+        public bool AgregarCategoria(string categoria, float porcentaje)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText="INSERT Categoria(Nombre_categoria, Valor_Impuesto) VALUES ('" + categoria + "', " +porcentaje+")";
+            conexion = new SqlConnection(CadenaConexion);
+            comando.Connection = conexion;
+            conexion.Open();
+            if (comando.ExecuteNonQuery() != 0)
+            {
+                conexion.Close();
+                return true;
+                
+            }
+            else
+            {
+                conexion.Close();
+                return false;
+                
+            }
+            
+        }
+
+        [WebMethod]
+        public List<string> Categorias()
+        {
+            List<string> cat = new List<string>();
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "Select * FROM Categoria";
+            conexion = new SqlConnection(CadenaConexion);
+            comando.Connection = conexion;
+            conexion.Open();
+            SqlDataReader lector = comando.ExecuteReader();
+            string nombre = "";
+            string valor = "";
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    nombre = lector.GetString(1);
+                    valor = (lector.GetDouble(2).ToString());
+                    cat.Add(nombre + "-" + valor);
+                }
+            }
+            return cat;
         }
     }
 }

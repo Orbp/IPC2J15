@@ -63,6 +63,7 @@
     <Content Include="Aplicacion\Administrador\Carga.aspx" />
     <Content Include="Aplicacion\Administrador\Cobros.aspx" />
     <Content Include="Aplicacion\Cotizar.aspx" />
+    <Content Include="Aplicacion\Crear.aspx" />
     <Content Include="Aplicacion\Default.aspx" />
     <Content Include="Aplicacion\Director\Contratacion.aspx" />
     <Content Include="Aplicacion\Director\Despido.aspx" />
@@ -96,6 +97,21 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.DevolverNombreClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.DevolverNombreEmpleadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.ParseoCSVResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.AgregarCategoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.CategoriasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\ServiceReference1\Service1.disco" />
@@ -136,6 +152,13 @@
     </Compile>
     <Compile Include="Aplicacion\Cotizar.aspx.designer.cs">
       <DependentUpon>Cotizar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Crear.aspx.cs">
+      <DependentUpon>Crear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Crear.aspx.designer.cs">
+      <DependentUpon>Crear.aspx</DependentUpon>
     </Compile>
     <Compile Include="Aplicacion\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

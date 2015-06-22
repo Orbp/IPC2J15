@@ -66,12 +66,32 @@ namespace Proyecto.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverNombreEmpleado", ReplyAction="*")]
         System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverNombreEmpleadoResponse> DevolverNombreEmpleadoAsync(Proyecto.ServiceReference1.DevolverNombreEmpleadoRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverCasillaCliente", ReplyAction="*")]
+        int DevolverCasillaCliente(int pDPI);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverCasillaCliente", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> DevolverCasillaClienteAsync(int pDPI);
+        
         // CODEGEN: Generating message contract since element name direccion from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ParseoCSV", ReplyAction="*")]
         Proyecto.ServiceReference1.ParseoCSVResponse ParseoCSV(Proyecto.ServiceReference1.ParseoCSVRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ParseoCSV", ReplyAction="*")]
         System.Threading.Tasks.Task<Proyecto.ServiceReference1.ParseoCSVResponse> ParseoCSVAsync(Proyecto.ServiceReference1.ParseoCSVRequest request);
+        
+        // CODEGEN: Generating message contract since element name categoria from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AgregarCategoria", ReplyAction="*")]
+        Proyecto.ServiceReference1.AgregarCategoriaResponse AgregarCategoria(Proyecto.ServiceReference1.AgregarCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AgregarCategoria", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.AgregarCategoriaResponse> AgregarCategoriaAsync(Proyecto.ServiceReference1.AgregarCategoriaRequest request);
+        
+        // CODEGEN: Generating message contract since element name CategoriasResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Categorias", ReplyAction="*")]
+        Proyecto.ServiceReference1.CategoriasResponse Categorias(Proyecto.ServiceReference1.CategoriasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Categorias", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.CategoriasResponse> CategoriasAsync(Proyecto.ServiceReference1.CategoriasRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -566,6 +586,139 @@ namespace Proyecto.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AgregarCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AgregarCategoria", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.AgregarCategoriaRequestBody Body;
+        
+        public AgregarCategoriaRequest() {
+        }
+        
+        public AgregarCategoriaRequest(Proyecto.ServiceReference1.AgregarCategoriaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AgregarCategoriaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string categoria;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public float porcentaje;
+        
+        public AgregarCategoriaRequestBody() {
+        }
+        
+        public AgregarCategoriaRequestBody(string categoria, float porcentaje) {
+            this.categoria = categoria;
+            this.porcentaje = porcentaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AgregarCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AgregarCategoriaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.AgregarCategoriaResponseBody Body;
+        
+        public AgregarCategoriaResponse() {
+        }
+        
+        public AgregarCategoriaResponse(Proyecto.ServiceReference1.AgregarCategoriaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AgregarCategoriaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool AgregarCategoriaResult;
+        
+        public AgregarCategoriaResponseBody() {
+        }
+        
+        public AgregarCategoriaResponseBody(bool AgregarCategoriaResult) {
+            this.AgregarCategoriaResult = AgregarCategoriaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CategoriasRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Categorias", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.CategoriasRequestBody Body;
+        
+        public CategoriasRequest() {
+        }
+        
+        public CategoriasRequest(Proyecto.ServiceReference1.CategoriasRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class CategoriasRequestBody {
+        
+        public CategoriasRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CategoriasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CategoriasResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.CategoriasResponseBody Body;
+        
+        public CategoriasResponse() {
+        }
+        
+        public CategoriasResponse(Proyecto.ServiceReference1.CategoriasResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class CategoriasResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Proyecto.ServiceReference1.ArrayOfString CategoriasResult;
+        
+        public CategoriasResponseBody() {
+        }
+        
+        public CategoriasResponseBody(Proyecto.ServiceReference1.ArrayOfString CategoriasResult) {
+            this.CategoriasResult = CategoriasResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface Service1SoapChannel : Proyecto.ServiceReference1.Service1Soap, System.ServiceModel.IClientChannel {
     }
@@ -751,6 +904,14 @@ namespace Proyecto.ServiceReference1 {
             return ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverNombreEmpleadoAsync(inValue);
         }
         
+        public int DevolverCasillaCliente(int pDPI) {
+            return base.Channel.DevolverCasillaCliente(pDPI);
+        }
+        
+        public System.Threading.Tasks.Task<int> DevolverCasillaClienteAsync(int pDPI) {
+            return base.Channel.DevolverCasillaClienteAsync(pDPI);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Proyecto.ServiceReference1.ParseoCSVResponse Proyecto.ServiceReference1.Service1Soap.ParseoCSV(Proyecto.ServiceReference1.ParseoCSVRequest request) {
             return base.Channel.ParseoCSV(request);
@@ -774,6 +935,56 @@ namespace Proyecto.ServiceReference1 {
             inValue.Body = new Proyecto.ServiceReference1.ParseoCSVRequestBody();
             inValue.Body.direccion = direccion;
             return ((Proyecto.ServiceReference1.Service1Soap)(this)).ParseoCSVAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.AgregarCategoriaResponse Proyecto.ServiceReference1.Service1Soap.AgregarCategoria(Proyecto.ServiceReference1.AgregarCategoriaRequest request) {
+            return base.Channel.AgregarCategoria(request);
+        }
+        
+        public bool AgregarCategoria(string categoria, float porcentaje) {
+            Proyecto.ServiceReference1.AgregarCategoriaRequest inValue = new Proyecto.ServiceReference1.AgregarCategoriaRequest();
+            inValue.Body = new Proyecto.ServiceReference1.AgregarCategoriaRequestBody();
+            inValue.Body.categoria = categoria;
+            inValue.Body.porcentaje = porcentaje;
+            Proyecto.ServiceReference1.AgregarCategoriaResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).AgregarCategoria(inValue);
+            return retVal.Body.AgregarCategoriaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.AgregarCategoriaResponse> Proyecto.ServiceReference1.Service1Soap.AgregarCategoriaAsync(Proyecto.ServiceReference1.AgregarCategoriaRequest request) {
+            return base.Channel.AgregarCategoriaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.AgregarCategoriaResponse> AgregarCategoriaAsync(string categoria, float porcentaje) {
+            Proyecto.ServiceReference1.AgregarCategoriaRequest inValue = new Proyecto.ServiceReference1.AgregarCategoriaRequest();
+            inValue.Body = new Proyecto.ServiceReference1.AgregarCategoriaRequestBody();
+            inValue.Body.categoria = categoria;
+            inValue.Body.porcentaje = porcentaje;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).AgregarCategoriaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.CategoriasResponse Proyecto.ServiceReference1.Service1Soap.Categorias(Proyecto.ServiceReference1.CategoriasRequest request) {
+            return base.Channel.Categorias(request);
+        }
+        
+        public Proyecto.ServiceReference1.ArrayOfString Categorias() {
+            Proyecto.ServiceReference1.CategoriasRequest inValue = new Proyecto.ServiceReference1.CategoriasRequest();
+            inValue.Body = new Proyecto.ServiceReference1.CategoriasRequestBody();
+            Proyecto.ServiceReference1.CategoriasResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).Categorias(inValue);
+            return retVal.Body.CategoriasResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.CategoriasResponse> Proyecto.ServiceReference1.Service1Soap.CategoriasAsync(Proyecto.ServiceReference1.CategoriasRequest request) {
+            return base.Channel.CategoriasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.CategoriasResponse> CategoriasAsync() {
+            Proyecto.ServiceReference1.CategoriasRequest inValue = new Proyecto.ServiceReference1.CategoriasRequest();
+            inValue.Body = new Proyecto.ServiceReference1.CategoriasRequestBody();
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).CategoriasAsync(inValue);
         }
     }
 }

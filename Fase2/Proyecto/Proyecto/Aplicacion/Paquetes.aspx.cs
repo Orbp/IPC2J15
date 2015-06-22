@@ -11,6 +11,9 @@ namespace Proyecto.Aplicacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ServiceReference1.Service1SoapClient sr = new ServiceReference1.Service1SoapClient();
+            LabelNombre.Text = LabelNombre.Text + sr.DevolverNombreCliente(Convert.ToInt32(Session["Onl"]));
+            LabelCasilla.Text= Convert.ToString(sr.DevolverCasillaCliente(Convert.ToInt32(Session["Onl"])));
 
         }
     }

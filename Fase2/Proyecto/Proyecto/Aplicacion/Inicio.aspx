@@ -4,9 +4,11 @@
         <div id="topbar">
             <div id="topnav">
                 <ul>
-                    <li class="active"><a href ="Inicio.aspx">Inicio</a></li> <li><a href="Cotizar.aspx">Cotizar</a></li>
+                    <li class="active"><a href ="Inicio.aspx">Inicio</a></li> 
+                    <li><a href="Cotizar.aspx">Cotizar</a></li>
                     <li><a href="Paquetes.aspx">Ver casilla</a></li>
                     <li><a href="Perfil.aspx">Perfil</a></li>
+                    <li><a href="Crear.aspx">Crear Pedido</a></li>
                 </ul>
             </div>
             <br class="clear" />

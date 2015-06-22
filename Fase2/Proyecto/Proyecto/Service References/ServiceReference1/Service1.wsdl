@@ -90,6 +90,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="DevolverCasillaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pDPI" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverCasillaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DevolverCasillaClienteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="ParseoCSV">
         <s:complexType>
           <s:sequence>
@@ -114,6 +128,31 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="AgregarCategoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="porcentaje" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgregarCategoriaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Categorias">
+        <s:complexType />
+      </s:element>
+      <s:element name="CategoriasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoriasResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="DevolverEmpleadoSoapIn">
@@ -152,11 +191,29 @@
   <wsdl:message name="DevolverNombreEmpleadoSoapOut">
     <wsdl:part name="parameters" element="tns:DevolverNombreEmpleadoResponse" />
   </wsdl:message>
+  <wsdl:message name="DevolverCasillaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:DevolverCasillaCliente" />
+  </wsdl:message>
+  <wsdl:message name="DevolverCasillaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolverCasillaClienteResponse" />
+  </wsdl:message>
   <wsdl:message name="ParseoCSVSoapIn">
     <wsdl:part name="parameters" element="tns:ParseoCSV" />
   </wsdl:message>
   <wsdl:message name="ParseoCSVSoapOut">
     <wsdl:part name="parameters" element="tns:ParseoCSVResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarCategoria" />
+  </wsdl:message>
+  <wsdl:message name="AgregarCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CategoriasSoapIn">
+    <wsdl:part name="parameters" element="tns:Categorias" />
+  </wsdl:message>
+  <wsdl:message name="CategoriasSoapOut">
+    <wsdl:part name="parameters" element="tns:CategoriasResponse" />
   </wsdl:message>
   <wsdl:portType name="Service1Soap">
     <wsdl:operation name="DevolverEmpleado">
@@ -183,9 +240,21 @@
       <wsdl:input message="tns:DevolverNombreEmpleadoSoapIn" />
       <wsdl:output message="tns:DevolverNombreEmpleadoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="DevolverCasillaCliente">
+      <wsdl:input message="tns:DevolverCasillaClienteSoapIn" />
+      <wsdl:output message="tns:DevolverCasillaClienteSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ParseoCSV">
       <wsdl:input message="tns:ParseoCSVSoapIn" />
       <wsdl:output message="tns:ParseoCSVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCategoria">
+      <wsdl:input message="tns:AgregarCategoriaSoapIn" />
+      <wsdl:output message="tns:AgregarCategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Categorias">
+      <wsdl:input message="tns:CategoriasSoapIn" />
+      <wsdl:output message="tns:CategoriasSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
@@ -244,8 +313,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DevolverCasillaCliente">
+      <soap:operation soapAction="http://tempuri.org/DevolverCasillaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ParseoCSV">
       <soap:operation soapAction="http://tempuri.org/ParseoCSV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCategoria">
+      <soap:operation soapAction="http://tempuri.org/AgregarCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Categorias">
+      <soap:operation soapAction="http://tempuri.org/Categorias" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -310,8 +406,35 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DevolverCasillaCliente">
+      <soap12:operation soapAction="http://tempuri.org/DevolverCasillaCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ParseoCSV">
       <soap12:operation soapAction="http://tempuri.org/ParseoCSV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCategoria">
+      <soap12:operation soapAction="http://tempuri.org/AgregarCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Categorias">
+      <soap12:operation soapAction="http://tempuri.org/Categorias" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

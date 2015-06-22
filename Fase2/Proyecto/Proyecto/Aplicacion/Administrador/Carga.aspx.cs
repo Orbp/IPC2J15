@@ -54,13 +54,46 @@ namespace Proyecto.Aplicacion.Administrador
         {
             
         }
-
+        
         protected void cargarDatos()
         {
+            ServiceReference1.Service1SoapClient sr = new ServiceReference1.Service1SoapClient();
             if (FileUpload1.HasFile)
             {
-                string direccion = Server.MapPath("~/ArchivosCSV/");
                 
+                string direccion = Server.MapPath(FileUpload1.FileName);
+                
+                Array datos;
+                datos = sr.ParseoCSV(direccion);
+                if (FileUpload1.FileName=="IMPUESTOS.CSV"){
+                    for (int i = 0; i < datos.Length-1; i += 2)
+                    {
+                        if (datos.GetValue(i).ToString() != "CATEGORIA")
+                        {
+                            string impu = datos.GetValue(i + 1).ToString();
+                            string aux = "";
+                            for(int j=0; j< impu.Length-1 ; j++)
+                            {
+                                if (impu.Substring(j) != "%")
+                                {
+                                    aux += impu.Substring(j);
+                                }
+                            }
+                            float impuesto = Convert.ToSingle(aux);
+                            string categoria = datos.GetValue(i).ToString();
+                            if (sr.AgregarCategoria(categoria, impuesto))
+                            {
+                                string script = @"<script type = 'text/javascript'> alert('Ingresado'); </script>";
+                                ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, false);
+                            }
+                            else
+                            {
+                                string script = @"<script type = 'text/javascript'> alert('NO Ingresado'); </script>";
+                                ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, false);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
