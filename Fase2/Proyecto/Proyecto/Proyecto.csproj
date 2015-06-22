@@ -59,9 +59,45 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Aplicacion\Administrador\Agregar.aspx" />
+    <Content Include="Aplicacion\Administrador\Carga.aspx" />
+    <Content Include="Aplicacion\Administrador\Cobros.aspx" />
+    <Content Include="Aplicacion\Cotizar.aspx" />
     <Content Include="Aplicacion\Default.aspx" />
+    <Content Include="Aplicacion\Director\Contratacion.aspx" />
+    <Content Include="Aplicacion\Director\Despido.aspx" />
+    <Content Include="Aplicacion\Director\Equipo.aspx" />
+    <Content Include="Aplicacion\Director\Modificar.aspx" />
+    <Content Include="Aplicacion\Empleado\Bodega.aspx" />
+    <Content Include="Aplicacion\Empleado\Busqueda.aspx" />
+    <Content Include="Aplicacion\Empleado\Clienteaprobar.aspx" />
+    <Content Include="Aplicacion\Empleado\Factura.aspx" />
+    <Content Include="Aplicacion\Empleado\Devoluciones.aspx" />
+    <Content Include="Aplicacion\Empleado\Verpaquetes.aspx" />
     <Content Include="Aplicacion\Estilos\Estilo.css" />
+    <Content Include="Aplicacion\Inicio.aspx" />
     <Content Include="Aplicacion\Login.aspx" />
+    <Content Include="Aplicacion\Paquetes.aspx" />
+    <Content Include="Aplicacion\Perfil.aspx" />
+    <Content Include="jquery\jquery.easing.1.3.js" />
+    <Content Include="jquery\jquery.jcarousel.pack.js" />
+    <Content Include="jquery\jquery.jcarousel.setup.js" />
+    <Content Include="jquery\jquery.min.js" />
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.DevolverEmpleadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.DevolverClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.DevolverAdministradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.DevolverDirectorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.DevolverNombreClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\ServiceReference1\Service1.disco" />
     <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
     <None Include="Service References\ServiceReference1\configuration.svcinfo" />
@@ -72,12 +108,118 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aplicacion\Administrador\Agregar.aspx.cs">
+      <DependentUpon>Agregar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Administrador\Agregar.aspx.designer.cs">
+      <DependentUpon>Agregar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Administrador\Carga.aspx.cs">
+      <DependentUpon>Carga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Administrador\Carga.aspx.designer.cs">
+      <DependentUpon>Carga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Administrador\CargarArchivo.cs" />
+    <Compile Include="Aplicacion\Administrador\Cobros.aspx.cs">
+      <DependentUpon>Cobros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Administrador\Cobros.aspx.designer.cs">
+      <DependentUpon>Cobros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Cotizar.aspx.cs">
+      <DependentUpon>Cotizar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Cotizar.aspx.designer.cs">
+      <DependentUpon>Cotizar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Aplicacion\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Aplicacion\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Director\Contratacion.aspx.cs">
+      <DependentUpon>Contratacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Director\Contratacion.aspx.designer.cs">
+      <DependentUpon>Contratacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Director\Despido.aspx.cs">
+      <DependentUpon>Despido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Director\Despido.aspx.designer.cs">
+      <DependentUpon>Despido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Director\Equipo.aspx.cs">
+      <DependentUpon>Equipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Director\Equipo.aspx.designer.cs">
+      <DependentUpon>Equipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Director\Modificar.aspx.cs">
+      <DependentUpon>Modificar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Director\Modificar.aspx.designer.cs">
+      <DependentUpon>Modificar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Empleado\Bodega.aspx.cs">
+      <DependentUpon>Bodega.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Empleado\Bodega.aspx.designer.cs">
+      <DependentUpon>Bodega.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Empleado\Busqueda.aspx.cs">
+      <DependentUpon>Busqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Empleado\Busqueda.aspx.designer.cs">
+      <DependentUpon>Busqueda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Empleado\Clienteaprobar.aspx.cs">
+      <DependentUpon>Clienteaprobar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Empleado\Clienteaprobar.aspx.designer.cs">
+      <DependentUpon>Clienteaprobar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Empleado\Factura.aspx.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Empleado\Factura.aspx.designer.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Empleado\Devoluciones.aspx.cs">
+      <DependentUpon>Devoluciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Empleado\Devoluciones.aspx.designer.cs">
+      <DependentUpon>Devoluciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Empleado\Verpaquetes.aspx.cs">
+      <DependentUpon>Verpaquetes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Empleado\Verpaquetes.aspx.designer.cs">
+      <DependentUpon>Verpaquetes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Aplicacion\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -92,6 +234,20 @@
     </Compile>
     <Compile Include="Aplicacion\master.Master.designer.cs">
       <DependentUpon>master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Paquetes.aspx.cs">
+      <DependentUpon>Paquetes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Paquetes.aspx.designer.cs">
+      <DependentUpon>Paquetes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
@@ -116,6 +272,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

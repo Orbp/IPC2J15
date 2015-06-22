@@ -4,12 +4,14 @@
         <div id ="topnav">
             <ul>
                 <li class ="active"><a href ="/Default.aspx">Inicio</a></li>
-                <li><a href="login.apsx">Inicio de sesion</a></li>
+                <li><a href="Login.aspx">Inicio de sesion</a></li>
             </ul>
         </div>
         <br class="clear" />
     </div>
+    
 </asp:Content>
+
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>

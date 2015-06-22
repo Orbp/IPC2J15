@@ -9,17 +9,561 @@
 //------------------------------------------------------------------------------
 
 namespace Proyecto.ServiceReference1 {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://tempuri.org/", ItemName="string")]
+    [System.SerializableAttribute()]
+    public class ArrayOfString : System.Collections.Generic.List<string> {
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.Service1Soap")]
     public interface Service1Soap {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Conectar", ReplyAction="*")]
-        void Conectar();
+        // CODEGEN: Generating message contract since element name usuario from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverEmpleado", ReplyAction="*")]
+        Proyecto.ServiceReference1.DevolverEmpleadoResponse DevolverEmpleado(Proyecto.ServiceReference1.DevolverEmpleadoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Conectar", ReplyAction="*")]
-        System.Threading.Tasks.Task ConectarAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverEmpleado", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverEmpleadoResponse> DevolverEmpleadoAsync(Proyecto.ServiceReference1.DevolverEmpleadoRequest request);
+        
+        // CODEGEN: Generating message contract since element name usuario from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverCliente", ReplyAction="*")]
+        Proyecto.ServiceReference1.DevolverClienteResponse DevolverCliente(Proyecto.ServiceReference1.DevolverClienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverCliente", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverClienteResponse> DevolverClienteAsync(Proyecto.ServiceReference1.DevolverClienteRequest request);
+        
+        // CODEGEN: Generating message contract since element name usuario from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverDirector", ReplyAction="*")]
+        Proyecto.ServiceReference1.DevolverDirectorResponse DevolverDirector(Proyecto.ServiceReference1.DevolverDirectorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverDirector", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverDirectorResponse> DevolverDirectorAsync(Proyecto.ServiceReference1.DevolverDirectorRequest request);
+        
+        // CODEGEN: Generating message contract since element name usuario from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverAdministrador", ReplyAction="*")]
+        Proyecto.ServiceReference1.DevolverAdministradorResponse DevolverAdministrador(Proyecto.ServiceReference1.DevolverAdministradorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverAdministrador", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverAdministradorResponse> DevolverAdministradorAsync(Proyecto.ServiceReference1.DevolverAdministradorRequest request);
+        
+        // CODEGEN: Generating message contract since element name DevolverNombreClienteResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverNombreCliente", ReplyAction="*")]
+        Proyecto.ServiceReference1.DevolverNombreClienteResponse DevolverNombreCliente(Proyecto.ServiceReference1.DevolverNombreClienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverNombreCliente", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverNombreClienteResponse> DevolverNombreClienteAsync(Proyecto.ServiceReference1.DevolverNombreClienteRequest request);
+        
+        // CODEGEN: Generating message contract since element name DevolverNombreEmpleadoResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverNombreEmpleado", ReplyAction="*")]
+        Proyecto.ServiceReference1.DevolverNombreEmpleadoResponse DevolverNombreEmpleado(Proyecto.ServiceReference1.DevolverNombreEmpleadoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverNombreEmpleado", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverNombreEmpleadoResponse> DevolverNombreEmpleadoAsync(Proyecto.ServiceReference1.DevolverNombreEmpleadoRequest request);
+        
+        // CODEGEN: Generating message contract since element name direccion from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ParseoCSV", ReplyAction="*")]
+        Proyecto.ServiceReference1.ParseoCSVResponse ParseoCSV(Proyecto.ServiceReference1.ParseoCSVRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ParseoCSV", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.ParseoCSVResponse> ParseoCSVAsync(Proyecto.ServiceReference1.ParseoCSVRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverEmpleadoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverEmpleado", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverEmpleadoRequestBody Body;
+        
+        public DevolverEmpleadoRequest() {
+        }
+        
+        public DevolverEmpleadoRequest(Proyecto.ServiceReference1.DevolverEmpleadoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverEmpleadoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string usuario;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string contraseña;
+        
+        public DevolverEmpleadoRequestBody() {
+        }
+        
+        public DevolverEmpleadoRequestBody(string usuario, string contraseña) {
+            this.usuario = usuario;
+            this.contraseña = contraseña;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverEmpleadoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverEmpleadoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverEmpleadoResponseBody Body;
+        
+        public DevolverEmpleadoResponse() {
+        }
+        
+        public DevolverEmpleadoResponse(Proyecto.ServiceReference1.DevolverEmpleadoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverEmpleadoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int DevolverEmpleadoResult;
+        
+        public DevolverEmpleadoResponseBody() {
+        }
+        
+        public DevolverEmpleadoResponseBody(int DevolverEmpleadoResult) {
+            this.DevolverEmpleadoResult = DevolverEmpleadoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverClienteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverCliente", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverClienteRequestBody Body;
+        
+        public DevolverClienteRequest() {
+        }
+        
+        public DevolverClienteRequest(Proyecto.ServiceReference1.DevolverClienteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverClienteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string usuario;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string contraseña;
+        
+        public DevolverClienteRequestBody() {
+        }
+        
+        public DevolverClienteRequestBody(string usuario, string contraseña) {
+            this.usuario = usuario;
+            this.contraseña = contraseña;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverClienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverClienteResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverClienteResponseBody Body;
+        
+        public DevolverClienteResponse() {
+        }
+        
+        public DevolverClienteResponse(Proyecto.ServiceReference1.DevolverClienteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverClienteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int DevolverClienteResult;
+        
+        public DevolverClienteResponseBody() {
+        }
+        
+        public DevolverClienteResponseBody(int DevolverClienteResult) {
+            this.DevolverClienteResult = DevolverClienteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverDirectorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverDirector", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverDirectorRequestBody Body;
+        
+        public DevolverDirectorRequest() {
+        }
+        
+        public DevolverDirectorRequest(Proyecto.ServiceReference1.DevolverDirectorRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverDirectorRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string usuario;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string contraseña;
+        
+        public DevolverDirectorRequestBody() {
+        }
+        
+        public DevolverDirectorRequestBody(string usuario, string contraseña) {
+            this.usuario = usuario;
+            this.contraseña = contraseña;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverDirectorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverDirectorResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverDirectorResponseBody Body;
+        
+        public DevolverDirectorResponse() {
+        }
+        
+        public DevolverDirectorResponse(Proyecto.ServiceReference1.DevolverDirectorResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverDirectorResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int DevolverDirectorResult;
+        
+        public DevolverDirectorResponseBody() {
+        }
+        
+        public DevolverDirectorResponseBody(int DevolverDirectorResult) {
+            this.DevolverDirectorResult = DevolverDirectorResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverAdministradorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverAdministrador", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverAdministradorRequestBody Body;
+        
+        public DevolverAdministradorRequest() {
+        }
+        
+        public DevolverAdministradorRequest(Proyecto.ServiceReference1.DevolverAdministradorRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverAdministradorRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string usuario;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string contraseña;
+        
+        public DevolverAdministradorRequestBody() {
+        }
+        
+        public DevolverAdministradorRequestBody(string usuario, string contraseña) {
+            this.usuario = usuario;
+            this.contraseña = contraseña;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverAdministradorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverAdministradorResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverAdministradorResponseBody Body;
+        
+        public DevolverAdministradorResponse() {
+        }
+        
+        public DevolverAdministradorResponse(Proyecto.ServiceReference1.DevolverAdministradorResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverAdministradorResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int DevolverAdministradorResult;
+        
+        public DevolverAdministradorResponseBody() {
+        }
+        
+        public DevolverAdministradorResponseBody(int DevolverAdministradorResult) {
+            this.DevolverAdministradorResult = DevolverAdministradorResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverNombreClienteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverNombreCliente", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverNombreClienteRequestBody Body;
+        
+        public DevolverNombreClienteRequest() {
+        }
+        
+        public DevolverNombreClienteRequest(Proyecto.ServiceReference1.DevolverNombreClienteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverNombreClienteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int pDPI;
+        
+        public DevolverNombreClienteRequestBody() {
+        }
+        
+        public DevolverNombreClienteRequestBody(int pDPI) {
+            this.pDPI = pDPI;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverNombreClienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverNombreClienteResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverNombreClienteResponseBody Body;
+        
+        public DevolverNombreClienteResponse() {
+        }
+        
+        public DevolverNombreClienteResponse(Proyecto.ServiceReference1.DevolverNombreClienteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverNombreClienteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string DevolverNombreClienteResult;
+        
+        public DevolverNombreClienteResponseBody() {
+        }
+        
+        public DevolverNombreClienteResponseBody(string DevolverNombreClienteResult) {
+            this.DevolverNombreClienteResult = DevolverNombreClienteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverNombreEmpleadoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverNombreEmpleado", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverNombreEmpleadoRequestBody Body;
+        
+        public DevolverNombreEmpleadoRequest() {
+        }
+        
+        public DevolverNombreEmpleadoRequest(Proyecto.ServiceReference1.DevolverNombreEmpleadoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverNombreEmpleadoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int pNumero;
+        
+        public DevolverNombreEmpleadoRequestBody() {
+        }
+        
+        public DevolverNombreEmpleadoRequestBody(int pNumero) {
+            this.pNumero = pNumero;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverNombreEmpleadoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverNombreEmpleadoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverNombreEmpleadoResponseBody Body;
+        
+        public DevolverNombreEmpleadoResponse() {
+        }
+        
+        public DevolverNombreEmpleadoResponse(Proyecto.ServiceReference1.DevolverNombreEmpleadoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverNombreEmpleadoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string DevolverNombreEmpleadoResult;
+        
+        public DevolverNombreEmpleadoResponseBody() {
+        }
+        
+        public DevolverNombreEmpleadoResponseBody(string DevolverNombreEmpleadoResult) {
+            this.DevolverNombreEmpleadoResult = DevolverNombreEmpleadoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ParseoCSVRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ParseoCSV", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.ParseoCSVRequestBody Body;
+        
+        public ParseoCSVRequest() {
+        }
+        
+        public ParseoCSVRequest(Proyecto.ServiceReference1.ParseoCSVRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ParseoCSVRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string direccion;
+        
+        public ParseoCSVRequestBody() {
+        }
+        
+        public ParseoCSVRequestBody(string direccion) {
+            this.direccion = direccion;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ParseoCSVResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ParseoCSVResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.ParseoCSVResponseBody Body;
+        
+        public ParseoCSVResponse() {
+        }
+        
+        public ParseoCSVResponse(Proyecto.ServiceReference1.ParseoCSVResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ParseoCSVResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Proyecto.ServiceReference1.ArrayOfString[] ParseoCSVResult;
+        
+        public ParseoCSVResponseBody() {
+        }
+        
+        public ParseoCSVResponseBody(Proyecto.ServiceReference1.ArrayOfString[] ParseoCSVResult) {
+            this.ParseoCSVResult = ParseoCSVResult;
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,12 +593,187 @@ namespace Proyecto.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public void Conectar() {
-            base.Channel.Conectar();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.DevolverEmpleadoResponse Proyecto.ServiceReference1.Service1Soap.DevolverEmpleado(Proyecto.ServiceReference1.DevolverEmpleadoRequest request) {
+            return base.Channel.DevolverEmpleado(request);
         }
         
-        public System.Threading.Tasks.Task ConectarAsync() {
-            return base.Channel.ConectarAsync();
+        public int DevolverEmpleado(string usuario, string contraseña) {
+            Proyecto.ServiceReference1.DevolverEmpleadoRequest inValue = new Proyecto.ServiceReference1.DevolverEmpleadoRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverEmpleadoRequestBody();
+            inValue.Body.usuario = usuario;
+            inValue.Body.contraseña = contraseña;
+            Proyecto.ServiceReference1.DevolverEmpleadoResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverEmpleado(inValue);
+            return retVal.Body.DevolverEmpleadoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverEmpleadoResponse> Proyecto.ServiceReference1.Service1Soap.DevolverEmpleadoAsync(Proyecto.ServiceReference1.DevolverEmpleadoRequest request) {
+            return base.Channel.DevolverEmpleadoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverEmpleadoResponse> DevolverEmpleadoAsync(string usuario, string contraseña) {
+            Proyecto.ServiceReference1.DevolverEmpleadoRequest inValue = new Proyecto.ServiceReference1.DevolverEmpleadoRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverEmpleadoRequestBody();
+            inValue.Body.usuario = usuario;
+            inValue.Body.contraseña = contraseña;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverEmpleadoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.DevolverClienteResponse Proyecto.ServiceReference1.Service1Soap.DevolverCliente(Proyecto.ServiceReference1.DevolverClienteRequest request) {
+            return base.Channel.DevolverCliente(request);
+        }
+        
+        public int DevolverCliente(string usuario, string contraseña) {
+            Proyecto.ServiceReference1.DevolverClienteRequest inValue = new Proyecto.ServiceReference1.DevolverClienteRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverClienteRequestBody();
+            inValue.Body.usuario = usuario;
+            inValue.Body.contraseña = contraseña;
+            Proyecto.ServiceReference1.DevolverClienteResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverCliente(inValue);
+            return retVal.Body.DevolverClienteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverClienteResponse> Proyecto.ServiceReference1.Service1Soap.DevolverClienteAsync(Proyecto.ServiceReference1.DevolverClienteRequest request) {
+            return base.Channel.DevolverClienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverClienteResponse> DevolverClienteAsync(string usuario, string contraseña) {
+            Proyecto.ServiceReference1.DevolverClienteRequest inValue = new Proyecto.ServiceReference1.DevolverClienteRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverClienteRequestBody();
+            inValue.Body.usuario = usuario;
+            inValue.Body.contraseña = contraseña;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverClienteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.DevolverDirectorResponse Proyecto.ServiceReference1.Service1Soap.DevolverDirector(Proyecto.ServiceReference1.DevolverDirectorRequest request) {
+            return base.Channel.DevolverDirector(request);
+        }
+        
+        public int DevolverDirector(string usuario, string contraseña) {
+            Proyecto.ServiceReference1.DevolverDirectorRequest inValue = new Proyecto.ServiceReference1.DevolverDirectorRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverDirectorRequestBody();
+            inValue.Body.usuario = usuario;
+            inValue.Body.contraseña = contraseña;
+            Proyecto.ServiceReference1.DevolverDirectorResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverDirector(inValue);
+            return retVal.Body.DevolverDirectorResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverDirectorResponse> Proyecto.ServiceReference1.Service1Soap.DevolverDirectorAsync(Proyecto.ServiceReference1.DevolverDirectorRequest request) {
+            return base.Channel.DevolverDirectorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverDirectorResponse> DevolverDirectorAsync(string usuario, string contraseña) {
+            Proyecto.ServiceReference1.DevolverDirectorRequest inValue = new Proyecto.ServiceReference1.DevolverDirectorRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverDirectorRequestBody();
+            inValue.Body.usuario = usuario;
+            inValue.Body.contraseña = contraseña;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverDirectorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.DevolverAdministradorResponse Proyecto.ServiceReference1.Service1Soap.DevolverAdministrador(Proyecto.ServiceReference1.DevolverAdministradorRequest request) {
+            return base.Channel.DevolverAdministrador(request);
+        }
+        
+        public int DevolverAdministrador(string usuario, string contraseña) {
+            Proyecto.ServiceReference1.DevolverAdministradorRequest inValue = new Proyecto.ServiceReference1.DevolverAdministradorRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverAdministradorRequestBody();
+            inValue.Body.usuario = usuario;
+            inValue.Body.contraseña = contraseña;
+            Proyecto.ServiceReference1.DevolverAdministradorResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverAdministrador(inValue);
+            return retVal.Body.DevolverAdministradorResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverAdministradorResponse> Proyecto.ServiceReference1.Service1Soap.DevolverAdministradorAsync(Proyecto.ServiceReference1.DevolverAdministradorRequest request) {
+            return base.Channel.DevolverAdministradorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverAdministradorResponse> DevolverAdministradorAsync(string usuario, string contraseña) {
+            Proyecto.ServiceReference1.DevolverAdministradorRequest inValue = new Proyecto.ServiceReference1.DevolverAdministradorRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverAdministradorRequestBody();
+            inValue.Body.usuario = usuario;
+            inValue.Body.contraseña = contraseña;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverAdministradorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.DevolverNombreClienteResponse Proyecto.ServiceReference1.Service1Soap.DevolverNombreCliente(Proyecto.ServiceReference1.DevolverNombreClienteRequest request) {
+            return base.Channel.DevolverNombreCliente(request);
+        }
+        
+        public string DevolverNombreCliente(int pDPI) {
+            Proyecto.ServiceReference1.DevolverNombreClienteRequest inValue = new Proyecto.ServiceReference1.DevolverNombreClienteRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverNombreClienteRequestBody();
+            inValue.Body.pDPI = pDPI;
+            Proyecto.ServiceReference1.DevolverNombreClienteResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverNombreCliente(inValue);
+            return retVal.Body.DevolverNombreClienteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverNombreClienteResponse> Proyecto.ServiceReference1.Service1Soap.DevolverNombreClienteAsync(Proyecto.ServiceReference1.DevolverNombreClienteRequest request) {
+            return base.Channel.DevolverNombreClienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverNombreClienteResponse> DevolverNombreClienteAsync(int pDPI) {
+            Proyecto.ServiceReference1.DevolverNombreClienteRequest inValue = new Proyecto.ServiceReference1.DevolverNombreClienteRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverNombreClienteRequestBody();
+            inValue.Body.pDPI = pDPI;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverNombreClienteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.DevolverNombreEmpleadoResponse Proyecto.ServiceReference1.Service1Soap.DevolverNombreEmpleado(Proyecto.ServiceReference1.DevolverNombreEmpleadoRequest request) {
+            return base.Channel.DevolverNombreEmpleado(request);
+        }
+        
+        public string DevolverNombreEmpleado(int pNumero) {
+            Proyecto.ServiceReference1.DevolverNombreEmpleadoRequest inValue = new Proyecto.ServiceReference1.DevolverNombreEmpleadoRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverNombreEmpleadoRequestBody();
+            inValue.Body.pNumero = pNumero;
+            Proyecto.ServiceReference1.DevolverNombreEmpleadoResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverNombreEmpleado(inValue);
+            return retVal.Body.DevolverNombreEmpleadoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverNombreEmpleadoResponse> Proyecto.ServiceReference1.Service1Soap.DevolverNombreEmpleadoAsync(Proyecto.ServiceReference1.DevolverNombreEmpleadoRequest request) {
+            return base.Channel.DevolverNombreEmpleadoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverNombreEmpleadoResponse> DevolverNombreEmpleadoAsync(int pNumero) {
+            Proyecto.ServiceReference1.DevolverNombreEmpleadoRequest inValue = new Proyecto.ServiceReference1.DevolverNombreEmpleadoRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverNombreEmpleadoRequestBody();
+            inValue.Body.pNumero = pNumero;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverNombreEmpleadoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.ParseoCSVResponse Proyecto.ServiceReference1.Service1Soap.ParseoCSV(Proyecto.ServiceReference1.ParseoCSVRequest request) {
+            return base.Channel.ParseoCSV(request);
+        }
+        
+        public Proyecto.ServiceReference1.ArrayOfString[] ParseoCSV(string direccion) {
+            Proyecto.ServiceReference1.ParseoCSVRequest inValue = new Proyecto.ServiceReference1.ParseoCSVRequest();
+            inValue.Body = new Proyecto.ServiceReference1.ParseoCSVRequestBody();
+            inValue.Body.direccion = direccion;
+            Proyecto.ServiceReference1.ParseoCSVResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).ParseoCSV(inValue);
+            return retVal.Body.ParseoCSVResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.ParseoCSVResponse> Proyecto.ServiceReference1.Service1Soap.ParseoCSVAsync(Proyecto.ServiceReference1.ParseoCSVRequest request) {
+            return base.Channel.ParseoCSVAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.ParseoCSVResponse> ParseoCSVAsync(string direccion) {
+            Proyecto.ServiceReference1.ParseoCSVRequest inValue = new Proyecto.ServiceReference1.ParseoCSVRequest();
+            inValue.Body = new Proyecto.ServiceReference1.ParseoCSVRequestBody();
+            inValue.Body.direccion = direccion;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).ParseoCSVAsync(inValue);
         }
     }
 }
