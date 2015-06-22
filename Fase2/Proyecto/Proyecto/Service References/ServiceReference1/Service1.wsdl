@@ -153,6 +153,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="DevolverDatosCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pDPI" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverDatosClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DevolverDatosClienteResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="DevolverEmpleadoSoapIn">
@@ -215,6 +229,12 @@
   <wsdl:message name="CategoriasSoapOut">
     <wsdl:part name="parameters" element="tns:CategoriasResponse" />
   </wsdl:message>
+  <wsdl:message name="DevolverDatosClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:DevolverDatosCliente" />
+  </wsdl:message>
+  <wsdl:message name="DevolverDatosClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolverDatosClienteResponse" />
+  </wsdl:message>
   <wsdl:portType name="Service1Soap">
     <wsdl:operation name="DevolverEmpleado">
       <wsdl:input message="tns:DevolverEmpleadoSoapIn" />
@@ -255,6 +275,10 @@
     <wsdl:operation name="Categorias">
       <wsdl:input message="tns:CategoriasSoapIn" />
       <wsdl:output message="tns:CategoriasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverDatosCliente">
+      <wsdl:input message="tns:DevolverDatosClienteSoapIn" />
+      <wsdl:output message="tns:DevolverDatosClienteSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
@@ -349,6 +373,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DevolverDatosCliente">
+      <soap:operation soapAction="http://tempuri.org/DevolverDatosCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -435,6 +468,15 @@
     </wsdl:operation>
     <wsdl:operation name="Categorias">
       <soap12:operation soapAction="http://tempuri.org/Categorias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverDatosCliente">
+      <soap12:operation soapAction="http://tempuri.org/DevolverDatosCliente" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

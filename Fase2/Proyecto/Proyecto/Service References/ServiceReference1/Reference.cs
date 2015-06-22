@@ -92,6 +92,13 @@ namespace Proyecto.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Categorias", ReplyAction="*")]
         System.Threading.Tasks.Task<Proyecto.ServiceReference1.CategoriasResponse> CategoriasAsync(Proyecto.ServiceReference1.CategoriasRequest request);
+        
+        // CODEGEN: Generating message contract since element name DevolverDatosClienteResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverDatosCliente", ReplyAction="*")]
+        Proyecto.ServiceReference1.DevolverDatosClienteResponse DevolverDatosCliente(Proyecto.ServiceReference1.DevolverDatosClienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverDatosCliente", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverDatosClienteResponse> DevolverDatosClienteAsync(Proyecto.ServiceReference1.DevolverDatosClienteRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -719,6 +726,74 @@ namespace Proyecto.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverDatosClienteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverDatosCliente", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverDatosClienteRequestBody Body;
+        
+        public DevolverDatosClienteRequest() {
+        }
+        
+        public DevolverDatosClienteRequest(Proyecto.ServiceReference1.DevolverDatosClienteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverDatosClienteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int pDPI;
+        
+        public DevolverDatosClienteRequestBody() {
+        }
+        
+        public DevolverDatosClienteRequestBody(int pDPI) {
+            this.pDPI = pDPI;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverDatosClienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverDatosClienteResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverDatosClienteResponseBody Body;
+        
+        public DevolverDatosClienteResponse() {
+        }
+        
+        public DevolverDatosClienteResponse(Proyecto.ServiceReference1.DevolverDatosClienteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverDatosClienteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Proyecto.ServiceReference1.ArrayOfString DevolverDatosClienteResult;
+        
+        public DevolverDatosClienteResponseBody() {
+        }
+        
+        public DevolverDatosClienteResponseBody(Proyecto.ServiceReference1.ArrayOfString DevolverDatosClienteResult) {
+            this.DevolverDatosClienteResult = DevolverDatosClienteResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface Service1SoapChannel : Proyecto.ServiceReference1.Service1Soap, System.ServiceModel.IClientChannel {
     }
@@ -985,6 +1060,31 @@ namespace Proyecto.ServiceReference1 {
             Proyecto.ServiceReference1.CategoriasRequest inValue = new Proyecto.ServiceReference1.CategoriasRequest();
             inValue.Body = new Proyecto.ServiceReference1.CategoriasRequestBody();
             return ((Proyecto.ServiceReference1.Service1Soap)(this)).CategoriasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.DevolverDatosClienteResponse Proyecto.ServiceReference1.Service1Soap.DevolverDatosCliente(Proyecto.ServiceReference1.DevolverDatosClienteRequest request) {
+            return base.Channel.DevolverDatosCliente(request);
+        }
+        
+        public Proyecto.ServiceReference1.ArrayOfString DevolverDatosCliente(int pDPI) {
+            Proyecto.ServiceReference1.DevolverDatosClienteRequest inValue = new Proyecto.ServiceReference1.DevolverDatosClienteRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverDatosClienteRequestBody();
+            inValue.Body.pDPI = pDPI;
+            Proyecto.ServiceReference1.DevolverDatosClienteResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverDatosCliente(inValue);
+            return retVal.Body.DevolverDatosClienteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverDatosClienteResponse> Proyecto.ServiceReference1.Service1Soap.DevolverDatosClienteAsync(Proyecto.ServiceReference1.DevolverDatosClienteRequest request) {
+            return base.Channel.DevolverDatosClienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverDatosClienteResponse> DevolverDatosClienteAsync(int pDPI) {
+            Proyecto.ServiceReference1.DevolverDatosClienteRequest inValue = new Proyecto.ServiceReference1.DevolverDatosClienteRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverDatosClienteRequestBody();
+            inValue.Body.pDPI = pDPI;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverDatosClienteAsync(inValue);
         }
     }
 }

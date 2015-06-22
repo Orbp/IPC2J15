@@ -23,5 +23,6 @@
     </ul>
     <ul>
         <asp:Label ID="Label1" runat="server" Text="Número de casilla:"></asp:Label>
+        <asp:Label ID="LabelCasilla" runat="server"></asp:Label>
     </ul>
 </asp:Content>

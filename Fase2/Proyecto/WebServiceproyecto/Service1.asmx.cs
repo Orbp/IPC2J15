@@ -117,31 +117,19 @@ namespace WebServiceproyecto
             SqlCommand comando= new SqlCommand();
             SqlCommand comando1 = new SqlCommand();
             comando.CommandText="SELECT Nombre FROM Cliente WHERE DPI = " + pDPI;
-            comando1.CommandText = "SELECT Apellido FROM Cliente WHERE DPI = " + pDPI;
             conexion = new SqlConnection(CadenaConexion);
             comando.Connection = conexion;
-            comando1.Connection = conexion;
             conexion.Open();
             SqlDataReader lector = comando.ExecuteReader();
             if (lector.HasRows)
             {
                 while (lector.Read())
                 {
-                    nombre = lector.GetString(1);
+                    nombre = lector.GetString(0);
                 }
             }
             lector.Close();
-            SqlDataReader lector1 = comando1.ExecuteReader();
-            if (lector1.HasRows)
-            {
-                while (lector1.Read())
-                {
-                    apellido = lector1.GetString(2);
-                }
-            }
-            lector1.Close();
             conexion.Close();
-            nombre += apellido;
             return nombre;
         }
 
@@ -264,6 +252,31 @@ namespace WebServiceproyecto
                 }
             }
             return cat;
+        }
+
+        [WebMethod]
+        public List<string> DevolverDatosCliente(int pDPI)
+        {
+            List<string> datos = new List<string>();
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "Select Nombre, Apellido, NIT, Telefono, Domicilio, Tarjeta From Cliente Where DPI = " + pDPI;
+            conexion = new SqlConnection(CadenaConexion);
+            comando.Connection = conexion;
+            conexion.Open();
+            SqlDataReader lector = comando.ExecuteReader();
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    datos.Add(lector.GetString(0));
+                    datos.Add(lector.GetString(1));
+                    datos.Add(Convert.ToString(lector.GetInt64(2)));
+                    datos.Add(Convert.ToString(lector.GetInt64(3)));
+                    datos.Add(lector.GetString(4));
+                    datos.Add(Convert.ToString(lector.GetInt64(5)));
+                }
+            }
+            return datos;
         }
     }
 }

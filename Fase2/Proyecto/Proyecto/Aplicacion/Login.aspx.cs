@@ -22,6 +22,7 @@ namespace Proyecto.Aplicacion
             if (autenticado)
             {
                 Response.Redirect("Inicio.aspx");
+                Response.Write(Session["Onl"]);
             }
         }
 
