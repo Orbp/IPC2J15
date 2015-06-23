@@ -54,17 +54,6 @@ Nombre_categoria VARCHAR(MAX) NOT NULL,
 Valor_Impuesto FLOAT NOT NULL
 )
 
-CREATE TABLE Producto(
-Id_producto INT IDENTITY(1,1) PRIMARY KEY,
-Nombre VARCHAR(MAX) NOT NULL,
-Descripcion VARCHAR(MAX) NOT NULL,
-Id_Categoria INT NOT NULL,
-Precio FLOAT NOT NULL,
-Peso INT NOT NULL,
-Estado INT NOT NULL
-FOREIGN KEY (Id_Categoria) REFERENCES Categoria(Id_Categoria)
-)
-
 CREATE TABLE Cliente(
 DPI INT PRIMARY KEY,
 Nombre VARCHAR(MAX) NOT NULL,
@@ -75,12 +64,23 @@ Domicilio VARCHAR(MAX) NOT NULL,
 Tarjeta BIGINT NOT NULL,
 Casilla INT NOT NULL,
 Id_sucursal INT NOT NULL,
-Id_producto INT NOT NULL,
 Usuario VARCHAR(MAX) NOT NULL,
 Contraseña VARCHAR(15) NOT NULL,
 Estado BIT NOT NULL,
 FOREIGN KEY(Id_sucursal) REFERENCES Sucursal(Id_sucursal),
-FOREIGN KEY (Id_producto) REFERENCES Producto(Id_producto)
+)
+
+CREATE TABLE Producto(
+Id_producto INT IDENTITY(1,1) PRIMARY KEY,
+Nombre VARCHAR(MAX) NOT NULL,
+Descripcion VARCHAR(MAX) NOT NULL,
+Id_Categoria INT NOT NULL,
+Id_Cliente INT NOT NULL,
+Precio FLOAT NOT NULL,
+Peso INT NOT NULL,
+Estado INT NOT NULL
+FOREIGN KEY (Id_Categoria) REFERENCES Categoria(Id_Categoria),
+FOREIGN KEY (Id_Cliente) REFERENCES Cliente(DPI)
 )
 
 CREATE TABLE Detalle(

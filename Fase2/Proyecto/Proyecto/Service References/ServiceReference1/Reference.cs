@@ -99,6 +99,13 @@ namespace Proyecto.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverDatosCliente", ReplyAction="*")]
         System.Threading.Tasks.Task<Proyecto.ServiceReference1.DevolverDatosClienteResponse> DevolverDatosClienteAsync(Proyecto.ServiceReference1.DevolverDatosClienteRequest request);
+        
+        // CODEGEN: Generating message contract since element name pnombre from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/actualizarCliente", ReplyAction="*")]
+        Proyecto.ServiceReference1.actualizarClienteResponse actualizarCliente(Proyecto.ServiceReference1.actualizarClienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/actualizarCliente", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.actualizarClienteResponse> actualizarClienteAsync(Proyecto.ServiceReference1.actualizarClienteRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -794,6 +801,98 @@ namespace Proyecto.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class actualizarClienteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="actualizarCliente", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.actualizarClienteRequestBody Body;
+        
+        public actualizarClienteRequest() {
+        }
+        
+        public actualizarClienteRequest(Proyecto.ServiceReference1.actualizarClienteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class actualizarClienteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int pDPI;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string pnombre;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string papellido;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string pnit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string ptelefono;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string pdir;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string ptar;
+        
+        public actualizarClienteRequestBody() {
+        }
+        
+        public actualizarClienteRequestBody(int pDPI, string pnombre, string papellido, string pnit, string ptelefono, string pdir, string ptar) {
+            this.pDPI = pDPI;
+            this.pnombre = pnombre;
+            this.papellido = papellido;
+            this.pnit = pnit;
+            this.ptelefono = ptelefono;
+            this.pdir = pdir;
+            this.ptar = ptar;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class actualizarClienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="actualizarClienteResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.actualizarClienteResponseBody Body;
+        
+        public actualizarClienteResponse() {
+        }
+        
+        public actualizarClienteResponse(Proyecto.ServiceReference1.actualizarClienteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class actualizarClienteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool actualizarClienteResult;
+        
+        public actualizarClienteResponseBody() {
+        }
+        
+        public actualizarClienteResponseBody(bool actualizarClienteResult) {
+            this.actualizarClienteResult = actualizarClienteResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface Service1SoapChannel : Proyecto.ServiceReference1.Service1Soap, System.ServiceModel.IClientChannel {
     }
@@ -1085,6 +1184,43 @@ namespace Proyecto.ServiceReference1 {
             inValue.Body = new Proyecto.ServiceReference1.DevolverDatosClienteRequestBody();
             inValue.Body.pDPI = pDPI;
             return ((Proyecto.ServiceReference1.Service1Soap)(this)).DevolverDatosClienteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.actualizarClienteResponse Proyecto.ServiceReference1.Service1Soap.actualizarCliente(Proyecto.ServiceReference1.actualizarClienteRequest request) {
+            return base.Channel.actualizarCliente(request);
+        }
+        
+        public bool actualizarCliente(int pDPI, string pnombre, string papellido, string pnit, string ptelefono, string pdir, string ptar) {
+            Proyecto.ServiceReference1.actualizarClienteRequest inValue = new Proyecto.ServiceReference1.actualizarClienteRequest();
+            inValue.Body = new Proyecto.ServiceReference1.actualizarClienteRequestBody();
+            inValue.Body.pDPI = pDPI;
+            inValue.Body.pnombre = pnombre;
+            inValue.Body.papellido = papellido;
+            inValue.Body.pnit = pnit;
+            inValue.Body.ptelefono = ptelefono;
+            inValue.Body.pdir = pdir;
+            inValue.Body.ptar = ptar;
+            Proyecto.ServiceReference1.actualizarClienteResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).actualizarCliente(inValue);
+            return retVal.Body.actualizarClienteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.actualizarClienteResponse> Proyecto.ServiceReference1.Service1Soap.actualizarClienteAsync(Proyecto.ServiceReference1.actualizarClienteRequest request) {
+            return base.Channel.actualizarClienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.actualizarClienteResponse> actualizarClienteAsync(int pDPI, string pnombre, string papellido, string pnit, string ptelefono, string pdir, string ptar) {
+            Proyecto.ServiceReference1.actualizarClienteRequest inValue = new Proyecto.ServiceReference1.actualizarClienteRequest();
+            inValue.Body = new Proyecto.ServiceReference1.actualizarClienteRequestBody();
+            inValue.Body.pDPI = pDPI;
+            inValue.Body.pnombre = pnombre;
+            inValue.Body.papellido = papellido;
+            inValue.Body.pnit = pnit;
+            inValue.Body.ptelefono = ptelefono;
+            inValue.Body.pdir = pdir;
+            inValue.Body.ptar = ptar;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).actualizarClienteAsync(inValue);
         }
     }
 }

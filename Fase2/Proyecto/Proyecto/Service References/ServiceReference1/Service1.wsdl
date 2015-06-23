@@ -167,6 +167,26 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="actualizarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pDPI" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pnombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="papellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptelefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pdir" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptar" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizarClienteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="DevolverEmpleadoSoapIn">
@@ -235,6 +255,12 @@
   <wsdl:message name="DevolverDatosClienteSoapOut">
     <wsdl:part name="parameters" element="tns:DevolverDatosClienteResponse" />
   </wsdl:message>
+  <wsdl:message name="actualizarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizarCliente" />
+  </wsdl:message>
+  <wsdl:message name="actualizarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizarClienteResponse" />
+  </wsdl:message>
   <wsdl:portType name="Service1Soap">
     <wsdl:operation name="DevolverEmpleado">
       <wsdl:input message="tns:DevolverEmpleadoSoapIn" />
@@ -279,6 +305,10 @@
     <wsdl:operation name="DevolverDatosCliente">
       <wsdl:input message="tns:DevolverDatosClienteSoapIn" />
       <wsdl:output message="tns:DevolverDatosClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarCliente">
+      <wsdl:input message="tns:actualizarClienteSoapIn" />
+      <wsdl:output message="tns:actualizarClienteSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
@@ -382,6 +412,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="actualizarCliente">
+      <soap:operation soapAction="http://tempuri.org/actualizarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -477,6 +516,15 @@
     </wsdl:operation>
     <wsdl:operation name="DevolverDatosCliente">
       <soap12:operation soapAction="http://tempuri.org/DevolverDatosCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarCliente">
+      <soap12:operation soapAction="http://tempuri.org/actualizarCliente" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

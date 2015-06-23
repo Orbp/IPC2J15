@@ -278,5 +278,27 @@ namespace WebServiceproyecto
             }
             return datos;
         }
+
+        [WebMethod]
+        public bool  actualizarCliente(int pDPI, string pnombre, string papellido, string pnit, string ptelefono, string pdir, string ptar)  
+        {
+            SqlCommand comando = new SqlCommand();
+            long nit = Convert.ToInt64(pnit);
+            long telefono = Convert.ToInt64(ptelefono);
+            long tarjeta = Convert.ToInt64(ptar);
+            comando.CommandText = "Update Cliente set Nombre='" + pnombre+ "' where DPI = " + pDPI;
+            conexion = new SqlConnection(CadenaConexion);
+            comando.Connection = conexion;
+            conexion.Open();
+            if (comando.ExecuteNonQuery() != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            conexion.Close();
+        }
     }
 }

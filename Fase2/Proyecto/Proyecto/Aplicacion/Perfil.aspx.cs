@@ -24,7 +24,16 @@ namespace Proyecto.Aplicacion
 
         protected void BtnActualizar_Click(object sender, EventArgs e)
         {
-
+            ServiceReference1.Service1SoapClient sr = new ServiceReference1.Service1SoapClient();
+            if (sr.actualizarCliente(Convert.ToInt32(Session["Onl"]), TBNombre.Text, TBApellido.Text, TBNit.Text, TBTelefono.Text, TBDireccion.Text, TBNume.Text))
+            {
+                Response.Redirect("Inicio.aspx");
+            }
+            else
+            {
+                Response.Write("ERROR");
+            }
+            
         }
     }
 }
