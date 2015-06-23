@@ -286,7 +286,7 @@ namespace WebServiceproyecto
             long nit = Convert.ToInt64(pnit);
             long telefono = Convert.ToInt64(ptelefono);
             long tarjeta = Convert.ToInt64(ptar);
-            comando.CommandText = "Update Cliente set Nombre='" + pnombre+ "' where DPI = " + pDPI;
+            comando.CommandText = "Update Cliente set Nombre='" + pnombre+ "' , Apellido ='" + papellido + "', NIT = "+ nit +", Telefono = " + telefono + ", Domicilio = '"+ pdir +"', Tarjeta = " + tarjeta +"where DPI = " + pDPI;
             conexion = new SqlConnection(CadenaConexion);
             comando.Connection = conexion;
             conexion.Open();
@@ -298,6 +298,88 @@ namespace WebServiceproyecto
             {
                 return 0;
             }
+            conexion.Close();
+        }
+
+        [WebMethod]
+        public List<string> Sucursales()
+        {
+            List<string> cat = new List<string>();
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "Select Direccion FROM Sucursal";
+            conexion = new SqlConnection(CadenaConexion);
+            comando.Connection = conexion;
+            conexion.Open();
+            SqlDataReader lector = comando.ExecuteReader();
+            string nombre = "";
+            string valor = "";
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    nombre = lector.GetString(0);
+                    cat.Add(nombre);
+                }
+            }
+            return cat;
+        }    
+
+        [WebMethod]
+        public bool RegistrarCliente(int pdpi, string nombre, string apellido, long nit, long telefono, string direccion, long tarjeta, string usuario, string contraseña, string sucursal)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "Select Id_sucursal From Sucursal where Direccion = '" + sucursal + "'";
+            conexion = new SqlConnection(CadenaConexion);
+            comando.Connection = conexion;
+            conexion.Open();
+            SqlDataReader lector = comando.ExecuteReader();
+            int idsu = 0;
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    idsu = lector.GetInt32(0);
+                }
+            }
+
+            SqlCommand comando1 = new SqlCommand();
+            comando1.CommandText = "Insert Cliente(DPI, Nombre, Apellido, NIT, Telefono, Domicilio, Tarjeta, Casilla, Id_sucursal, Usuario, Contraseña, Estado)" +
+                "Values (" +pdpi+", '" + nombre +"' ,  '" + apellido +"' ," + nit + ", " + telefono+", '" +direccion+"'," + tarjeta+ ", 0, "+ idsu+", '"+usuario+"' + '"+ contraseña+"' , 0)";
+            comando1.Connection = conexion;
+            conexion.Open();
+            if (comando1.ExecuteNonQuery() != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        [WebMethod]
+        public void cargarEmpleado(String direccion)
+        {
+
+
+            SqlCommand miComandoSQL = new SqlCommand("BULK INSERT Empleado FROM '" + direccion + "' WITH ( FIRSTROW = 2, FIELDTERMINATOR = ',', ROWTERMINATOR = '\n', TABLOCK )");
+            conexion = new SqlConnection(CadenaConexion);
+            miComandoSQL.Connection = conexion;
+            conexion.Open();
+            miComandoSQL.ExecuteNonQuery();
+            conexion.Close();
+
+
+
+        }
+        [WebMethod]
+        public void cargarCategoria(String direccion)
+        {
+            SqlCommand miComandoSQL = new SqlCommand("BULK INSERT Categoria FROM '" + direccion + "' WITH ( FIRSTROW = 2, FIELDTERMINATOR = ',', ROWTERMINATOR = '\n', TABLOCK )");
+            conexion = new SqlConnection(CadenaConexion);
+            miComandoSQL.Connection = conexion;
+            conexion.Open();
+            miComandoSQL.ExecuteNonQuery();
             conexion.Close();
         }
     }

@@ -5,6 +5,7 @@
             <ul>
                 <li class ="active"><a href ="/Default.aspx">Inicio</a></li>
                 <li><a href="Login.aspx">Inicio de sesion</a></li>
+                <li><a href ="Registro.aspx">Registro de cliente</a></li>
             </ul>
         </div>
         <br class="clear" />

@@ -80,6 +80,7 @@
     <Content Include="Aplicacion\Login.aspx" />
     <Content Include="Aplicacion\Paquetes.aspx" />
     <Content Include="Aplicacion\Perfil.aspx" />
+    <Content Include="Aplicacion\Registro.aspx" />
     <Content Include="jquery\jquery.easing.1.3.js" />
     <Content Include="jquery\jquery.jcarousel.pack.js" />
     <Content Include="jquery\jquery.jcarousel.setup.js" />
@@ -118,6 +119,18 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.actualizarClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.SucursalesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.RegistrarClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.cargarCategoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.cargarEmpleadoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\ServiceReference1\Service1.disco" />
@@ -277,6 +290,13 @@
     </Compile>
     <Compile Include="Aplicacion\Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">

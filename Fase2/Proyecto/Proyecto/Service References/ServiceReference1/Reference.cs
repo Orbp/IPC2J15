@@ -106,6 +106,34 @@ namespace Proyecto.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/actualizarCliente", ReplyAction="*")]
         System.Threading.Tasks.Task<Proyecto.ServiceReference1.actualizarClienteResponse> actualizarClienteAsync(Proyecto.ServiceReference1.actualizarClienteRequest request);
+        
+        // CODEGEN: Generating message contract since element name SucursalesResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Sucursales", ReplyAction="*")]
+        Proyecto.ServiceReference1.SucursalesResponse Sucursales(Proyecto.ServiceReference1.SucursalesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Sucursales", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.SucursalesResponse> SucursalesAsync(Proyecto.ServiceReference1.SucursalesRequest request);
+        
+        // CODEGEN: Generating message contract since element name nombre from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarCliente", ReplyAction="*")]
+        Proyecto.ServiceReference1.RegistrarClienteResponse RegistrarCliente(Proyecto.ServiceReference1.RegistrarClienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarCliente", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.RegistrarClienteResponse> RegistrarClienteAsync(Proyecto.ServiceReference1.RegistrarClienteRequest request);
+        
+        // CODEGEN: Generating message contract since element name direccion from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/cargarEmpleado", ReplyAction="*")]
+        Proyecto.ServiceReference1.cargarEmpleadoResponse cargarEmpleado(Proyecto.ServiceReference1.cargarEmpleadoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/cargarEmpleado", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.cargarEmpleadoResponse> cargarEmpleadoAsync(Proyecto.ServiceReference1.cargarEmpleadoRequest request);
+        
+        // CODEGEN: Generating message contract since element name direccion from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/cargarCategoria", ReplyAction="*")]
+        Proyecto.ServiceReference1.cargarCategoriaResponse cargarCategoria(Proyecto.ServiceReference1.cargarCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/cargarCategoria", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.cargarCategoriaResponse> cargarCategoriaAsync(Proyecto.ServiceReference1.cargarCategoriaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -893,6 +921,293 @@ namespace Proyecto.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SucursalesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Sucursales", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.SucursalesRequestBody Body;
+        
+        public SucursalesRequest() {
+        }
+        
+        public SucursalesRequest(Proyecto.ServiceReference1.SucursalesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class SucursalesRequestBody {
+        
+        public SucursalesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SucursalesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SucursalesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.SucursalesResponseBody Body;
+        
+        public SucursalesResponse() {
+        }
+        
+        public SucursalesResponse(Proyecto.ServiceReference1.SucursalesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SucursalesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Proyecto.ServiceReference1.ArrayOfString SucursalesResult;
+        
+        public SucursalesResponseBody() {
+        }
+        
+        public SucursalesResponseBody(Proyecto.ServiceReference1.ArrayOfString SucursalesResult) {
+            this.SucursalesResult = SucursalesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class RegistrarClienteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RegistrarCliente", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.RegistrarClienteRequestBody Body;
+        
+        public RegistrarClienteRequest() {
+        }
+        
+        public RegistrarClienteRequest(Proyecto.ServiceReference1.RegistrarClienteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class RegistrarClienteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int pdpi;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string nombre;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string apellido;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public long nit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public long telefono;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string direccion;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public long tarjeta;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string usuario;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string contraseña;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string sucursal;
+        
+        public RegistrarClienteRequestBody() {
+        }
+        
+        public RegistrarClienteRequestBody(int pdpi, string nombre, string apellido, long nit, long telefono, string direccion, long tarjeta, string usuario, string contraseña, string sucursal) {
+            this.pdpi = pdpi;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.nit = nit;
+            this.telefono = telefono;
+            this.direccion = direccion;
+            this.tarjeta = tarjeta;
+            this.usuario = usuario;
+            this.contraseña = contraseña;
+            this.sucursal = sucursal;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class RegistrarClienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RegistrarClienteResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.RegistrarClienteResponseBody Body;
+        
+        public RegistrarClienteResponse() {
+        }
+        
+        public RegistrarClienteResponse(Proyecto.ServiceReference1.RegistrarClienteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class RegistrarClienteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool RegistrarClienteResult;
+        
+        public RegistrarClienteResponseBody() {
+        }
+        
+        public RegistrarClienteResponseBody(bool RegistrarClienteResult) {
+            this.RegistrarClienteResult = RegistrarClienteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class cargarEmpleadoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="cargarEmpleado", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.cargarEmpleadoRequestBody Body;
+        
+        public cargarEmpleadoRequest() {
+        }
+        
+        public cargarEmpleadoRequest(Proyecto.ServiceReference1.cargarEmpleadoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class cargarEmpleadoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string direccion;
+        
+        public cargarEmpleadoRequestBody() {
+        }
+        
+        public cargarEmpleadoRequestBody(string direccion) {
+            this.direccion = direccion;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class cargarEmpleadoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="cargarEmpleadoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.cargarEmpleadoResponseBody Body;
+        
+        public cargarEmpleadoResponse() {
+        }
+        
+        public cargarEmpleadoResponse(Proyecto.ServiceReference1.cargarEmpleadoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class cargarEmpleadoResponseBody {
+        
+        public cargarEmpleadoResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class cargarCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="cargarCategoria", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.cargarCategoriaRequestBody Body;
+        
+        public cargarCategoriaRequest() {
+        }
+        
+        public cargarCategoriaRequest(Proyecto.ServiceReference1.cargarCategoriaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class cargarCategoriaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string direccion;
+        
+        public cargarCategoriaRequestBody() {
+        }
+        
+        public cargarCategoriaRequestBody(string direccion) {
+            this.direccion = direccion;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class cargarCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="cargarCategoriaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.cargarCategoriaResponseBody Body;
+        
+        public cargarCategoriaResponse() {
+        }
+        
+        public cargarCategoriaResponse(Proyecto.ServiceReference1.cargarCategoriaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class cargarCategoriaResponseBody {
+        
+        public cargarCategoriaResponseBody() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface Service1SoapChannel : Proyecto.ServiceReference1.Service1Soap, System.ServiceModel.IClientChannel {
     }
@@ -1221,6 +1536,120 @@ namespace Proyecto.ServiceReference1 {
             inValue.Body.pdir = pdir;
             inValue.Body.ptar = ptar;
             return ((Proyecto.ServiceReference1.Service1Soap)(this)).actualizarClienteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.SucursalesResponse Proyecto.ServiceReference1.Service1Soap.Sucursales(Proyecto.ServiceReference1.SucursalesRequest request) {
+            return base.Channel.Sucursales(request);
+        }
+        
+        public Proyecto.ServiceReference1.ArrayOfString Sucursales() {
+            Proyecto.ServiceReference1.SucursalesRequest inValue = new Proyecto.ServiceReference1.SucursalesRequest();
+            inValue.Body = new Proyecto.ServiceReference1.SucursalesRequestBody();
+            Proyecto.ServiceReference1.SucursalesResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).Sucursales(inValue);
+            return retVal.Body.SucursalesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.SucursalesResponse> Proyecto.ServiceReference1.Service1Soap.SucursalesAsync(Proyecto.ServiceReference1.SucursalesRequest request) {
+            return base.Channel.SucursalesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.SucursalesResponse> SucursalesAsync() {
+            Proyecto.ServiceReference1.SucursalesRequest inValue = new Proyecto.ServiceReference1.SucursalesRequest();
+            inValue.Body = new Proyecto.ServiceReference1.SucursalesRequestBody();
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).SucursalesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.RegistrarClienteResponse Proyecto.ServiceReference1.Service1Soap.RegistrarCliente(Proyecto.ServiceReference1.RegistrarClienteRequest request) {
+            return base.Channel.RegistrarCliente(request);
+        }
+        
+        public bool RegistrarCliente(int pdpi, string nombre, string apellido, long nit, long telefono, string direccion, long tarjeta, string usuario, string contraseña, string sucursal) {
+            Proyecto.ServiceReference1.RegistrarClienteRequest inValue = new Proyecto.ServiceReference1.RegistrarClienteRequest();
+            inValue.Body = new Proyecto.ServiceReference1.RegistrarClienteRequestBody();
+            inValue.Body.pdpi = pdpi;
+            inValue.Body.nombre = nombre;
+            inValue.Body.apellido = apellido;
+            inValue.Body.nit = nit;
+            inValue.Body.telefono = telefono;
+            inValue.Body.direccion = direccion;
+            inValue.Body.tarjeta = tarjeta;
+            inValue.Body.usuario = usuario;
+            inValue.Body.contraseña = contraseña;
+            inValue.Body.sucursal = sucursal;
+            Proyecto.ServiceReference1.RegistrarClienteResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).RegistrarCliente(inValue);
+            return retVal.Body.RegistrarClienteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.RegistrarClienteResponse> Proyecto.ServiceReference1.Service1Soap.RegistrarClienteAsync(Proyecto.ServiceReference1.RegistrarClienteRequest request) {
+            return base.Channel.RegistrarClienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.RegistrarClienteResponse> RegistrarClienteAsync(int pdpi, string nombre, string apellido, long nit, long telefono, string direccion, long tarjeta, string usuario, string contraseña, string sucursal) {
+            Proyecto.ServiceReference1.RegistrarClienteRequest inValue = new Proyecto.ServiceReference1.RegistrarClienteRequest();
+            inValue.Body = new Proyecto.ServiceReference1.RegistrarClienteRequestBody();
+            inValue.Body.pdpi = pdpi;
+            inValue.Body.nombre = nombre;
+            inValue.Body.apellido = apellido;
+            inValue.Body.nit = nit;
+            inValue.Body.telefono = telefono;
+            inValue.Body.direccion = direccion;
+            inValue.Body.tarjeta = tarjeta;
+            inValue.Body.usuario = usuario;
+            inValue.Body.contraseña = contraseña;
+            inValue.Body.sucursal = sucursal;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).RegistrarClienteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.cargarEmpleadoResponse Proyecto.ServiceReference1.Service1Soap.cargarEmpleado(Proyecto.ServiceReference1.cargarEmpleadoRequest request) {
+            return base.Channel.cargarEmpleado(request);
+        }
+        
+        public void cargarEmpleado(string direccion) {
+            Proyecto.ServiceReference1.cargarEmpleadoRequest inValue = new Proyecto.ServiceReference1.cargarEmpleadoRequest();
+            inValue.Body = new Proyecto.ServiceReference1.cargarEmpleadoRequestBody();
+            inValue.Body.direccion = direccion;
+            Proyecto.ServiceReference1.cargarEmpleadoResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).cargarEmpleado(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.cargarEmpleadoResponse> Proyecto.ServiceReference1.Service1Soap.cargarEmpleadoAsync(Proyecto.ServiceReference1.cargarEmpleadoRequest request) {
+            return base.Channel.cargarEmpleadoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.cargarEmpleadoResponse> cargarEmpleadoAsync(string direccion) {
+            Proyecto.ServiceReference1.cargarEmpleadoRequest inValue = new Proyecto.ServiceReference1.cargarEmpleadoRequest();
+            inValue.Body = new Proyecto.ServiceReference1.cargarEmpleadoRequestBody();
+            inValue.Body.direccion = direccion;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).cargarEmpleadoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.cargarCategoriaResponse Proyecto.ServiceReference1.Service1Soap.cargarCategoria(Proyecto.ServiceReference1.cargarCategoriaRequest request) {
+            return base.Channel.cargarCategoria(request);
+        }
+        
+        public void cargarCategoria(string direccion) {
+            Proyecto.ServiceReference1.cargarCategoriaRequest inValue = new Proyecto.ServiceReference1.cargarCategoriaRequest();
+            inValue.Body = new Proyecto.ServiceReference1.cargarCategoriaRequestBody();
+            inValue.Body.direccion = direccion;
+            Proyecto.ServiceReference1.cargarCategoriaResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).cargarCategoria(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.cargarCategoriaResponse> Proyecto.ServiceReference1.Service1Soap.cargarCategoriaAsync(Proyecto.ServiceReference1.cargarCategoriaRequest request) {
+            return base.Channel.cargarCategoriaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.cargarCategoriaResponse> cargarCategoriaAsync(string direccion) {
+            Proyecto.ServiceReference1.cargarCategoriaRequest inValue = new Proyecto.ServiceReference1.cargarCategoriaRequest();
+            inValue.Body = new Proyecto.ServiceReference1.cargarCategoriaRequestBody();
+            inValue.Body.direccion = direccion;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).cargarCategoriaAsync(inValue);
         }
     }
 }

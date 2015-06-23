@@ -22,30 +22,36 @@
         <asp:Label ID="LabelNombre" runat="server" Text="Bienvenido "></asp:Label>
     </ul>
     <ul>
-        <asp:Label ID="Label1" runat ="server" Text="A continuación se muestran sus datos personales y podra editarlos para actualizar su información y darle un mejor servicio"></asp:Label>
+        <asp:Label ID="Label1" runat ="server" Text="A continuación se muestran sus datos personales anteriores y podra editarlos o reingresarlos para actualizar su información y darle un mejor servicio"></asp:Label>
     </ul>
     <ul>
         <asp:Label ID="Label2" runat="server" Text="Nombre:     "></asp:Label>
+        <asp:Label ID="LBLNombre" runat="server"></asp:Label>
         <asp:TextBox ID="TBNombre" runat="server"></asp:TextBox>
     </ul>
     <ul>
         <asp:Label ID="Label3" runat="server" Text="Apellido:   "></asp:Label>
+        <asp:Label ID="LBLApellido" runat="server"></asp:Label>
         <asp:TextBox ID="TBApellido" runat="server"></asp:TextBox>
     </ul>
     <ul>
         <asp:Label ID="Label4" runat="server" Text="NIT:         "></asp:Label>
+        <asp:Label ID="LBLNit" runat="server"></asp:Label>
         <asp:TextBox ID="TBNit" runat="server"></asp:TextBox>       
     </ul>
     <ul>
         <asp:Label ID="label5" runat="server" Text="Telefono:"></asp:Label>
+        <asp:Label ID="LBLTelefono" runat="server"></asp:Label>
         <asp:TextBox ID ="TBTelefono" runat="server"></asp:TextBox>
     </ul>
     <ul>
         <asp:Label ID="label6" runat="server" Text="Direccion:"></asp:Label>
+        <asp:Label ID="LBLDireccion" runat="server"></asp:Label>
         <asp:TextBox ID="TBDireccion" runat="server"></asp:TextBox>
     </ul>
     <ul>
         <asp:Label ID="labe7" runat ="server" Text ="Número de tarjeta:"></asp:Label>
+        <asp:Label ID="LBLNume" runat="server"></asp:Label>
         <asp:TextBox ID="TBNume" runat="server"></asp:TextBox>
     </ul>
     <ul>

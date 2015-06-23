@@ -10,34 +10,16 @@
 namespace Proyecto.Aplicacion {
     
     
-    public partial class Perfil {
+    public partial class Registro {
         
         /// <summary>
-        /// PCliente control.
+        /// label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PCliente;
-        
-        /// <summary>
-        /// LabelNombre control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNombre;
-        
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label label1;
         
         /// <summary>
         /// Label2 control.
@@ -49,22 +31,13 @@ namespace Proyecto.Aplicacion {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// LBLNombre control.
+        /// TbNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBLNombre;
-        
-        /// <summary>
-        /// TBNombre control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBNombre;
+        protected global::System.Web.UI.WebControls.TextBox TbNombre;
         
         /// <summary>
         /// Label3 control.
@@ -76,13 +49,13 @@ namespace Proyecto.Aplicacion {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// LBLApellido control.
+        /// Label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBLApellido;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
         /// TBApellido control.
@@ -94,22 +67,22 @@ namespace Proyecto.Aplicacion {
         protected global::System.Web.UI.WebControls.TextBox TBApellido;
         
         /// <summary>
-        /// Label4 control.
+        /// Label5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// LBLNit control.
+        /// Label6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBLNit;
+        protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
         /// TBNit control.
@@ -121,22 +94,22 @@ namespace Proyecto.Aplicacion {
         protected global::System.Web.UI.WebControls.TextBox TBNit;
         
         /// <summary>
-        /// label5 control.
+        /// Label7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label5;
+        protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// LBLTelefono control.
+        /// Label8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBLTelefono;
+        protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
         /// TBTelefono control.
@@ -148,49 +121,49 @@ namespace Proyecto.Aplicacion {
         protected global::System.Web.UI.WebControls.TextBox TBTelefono;
         
         /// <summary>
-        /// label6 control.
+        /// Label19 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label6;
+        protected global::System.Web.UI.WebControls.Label Label19;
         
         /// <summary>
-        /// LBLDireccion control.
+        /// Label10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBLDireccion;
+        protected global::System.Web.UI.WebControls.Label Label10;
         
         /// <summary>
-        /// TBDireccion control.
+        /// TBDomicilio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBDireccion;
+        protected global::System.Web.UI.WebControls.TextBox TBDomicilio;
         
         /// <summary>
-        /// labe7 control.
+        /// Label11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labe7;
+        protected global::System.Web.UI.WebControls.Label Label11;
         
         /// <summary>
-        /// LBLNume control.
+        /// label12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBLNume;
+        protected global::System.Web.UI.WebControls.Label label12;
         
         /// <summary>
         /// TBNume control.
@@ -202,12 +175,120 @@ namespace Proyecto.Aplicacion {
         protected global::System.Web.UI.WebControls.TextBox TBNume;
         
         /// <summary>
-        /// BtnActualizar control.
+        /// label13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnActualizar;
+        protected global::System.Web.UI.WebControls.Label label13;
+        
+        /// <summary>
+        /// label14 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label14;
+        
+        /// <summary>
+        /// TBUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBUsuario;
+        
+        /// <summary>
+        /// label15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label15;
+        
+        /// <summary>
+        /// label16 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label16;
+        
+        /// <summary>
+        /// TBContraseña control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBContraseña;
+        
+        /// <summary>
+        /// label17 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label17;
+        
+        /// <summary>
+        /// label18 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label18;
+        
+        /// <summary>
+        /// TBDpi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBDpi;
+        
+        /// <summary>
+        /// label9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label9;
+        
+        /// <summary>
+        /// label20 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label20;
+        
+        /// <summary>
+        /// DDL1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDL1;
+        
+        /// <summary>
+        /// BTNRegistrar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BTNRegistrar;
     }
 }

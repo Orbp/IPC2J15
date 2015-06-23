@@ -18,5 +18,9 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <ul><asp:FileUpload ID="FileUpload1" runat="server" /></ul>
+    <ul><asp:DropDownList ID="DDL" runat ="server">
+        <asp:ListItem>Impuesto</asp:ListItem>
+        <asp:ListItem>Empleados</asp:ListItem>
+        </asp:DropDownList></ul>
     <asp:Button ID="BotonCargar" runat="server" OnClick="BotonCargar_Click" Text="Cargar Archivo"/>
 </asp:Content>

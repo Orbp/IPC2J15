@@ -52,7 +52,13 @@ namespace Proyecto.Aplicacion.Administrador
         }
         protected void BotonCargar_Click(object sender, EventArgs e)
         {
-            
+            ServiceReference1.Service1SoapClient wsr = new ServiceReference1.Service1SoapClient();
+            String direccionCSV = Server.MapPath(FileUpload1.FileName);
+            if(DDL.SelectedIndex.Equals(0){
+                wsr.cargarCategoria(direccionCSV);
+            }else{
+                wsr.cargarEmpleado(direccionCSV);
+            }
         }
         
         protected void cargarDatos()
