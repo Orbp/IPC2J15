@@ -9,9 +9,10 @@ namespace Proyecto.Aplicacion
 {
     public partial class Perfil : System.Web.UI.Page
     {
+        ServiceReference1.Service1SoapClient sr = new ServiceReference1.Service1SoapClient();
         protected void Page_Load(object sender, EventArgs e)
         {
-            ServiceReference1.Service1SoapClient sr = new ServiceReference1.Service1SoapClient();
+            
             List<string> datos = new List<string>();
             datos = sr.DevolverDatosCliente(Convert.ToInt32(Session["Onl"]));
             TBNombre.Text = datos[0];
@@ -24,10 +25,11 @@ namespace Proyecto.Aplicacion
 
         protected void BtnActualizar_Click(object sender, EventArgs e)
         {
-            ServiceReference1.Service1SoapClient sr = new ServiceReference1.Service1SoapClient();
-            if (sr.actualizarCliente(Convert.ToInt32(Session["Onl"]), TBNombre.Text, TBApellido.Text, TBNit.Text, TBTelefono.Text, TBDireccion.Text, TBNume.Text))
+            string n = TBNombre.Text;
+            Response.Write(n);
+            if (sr.actualizarCliente(Convert.ToInt32(Session["Onl"]), n, TBApellido.Text, TBNit.Text, TBTelefono.Text, TBDireccion.Text, TBNume.Text) == 1)
             {
-                Response.Redirect("Inicio.aspx");
+
             }
             else
             {

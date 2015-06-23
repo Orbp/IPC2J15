@@ -280,7 +280,7 @@ namespace WebServiceproyecto
         }
 
         [WebMethod]
-        public bool  actualizarCliente(int pDPI, string pnombre, string papellido, string pnit, string ptelefono, string pdir, string ptar)  
+        public int  actualizarCliente(int pDPI, string pnombre, string papellido, string pnit, string ptelefono, string pdir, string ptar)  
         {
             SqlCommand comando = new SqlCommand();
             long nit = Convert.ToInt64(pnit);
@@ -292,11 +292,11 @@ namespace WebServiceproyecto
             conexion.Open();
             if (comando.ExecuteNonQuery() != 0)
             {
-                return true;
+                return 1;
             }
             else
             {
-                return false;
+                return 0;
             }
             conexion.Close();
         }

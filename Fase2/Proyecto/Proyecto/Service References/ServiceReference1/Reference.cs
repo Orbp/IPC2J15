@@ -883,12 +883,12 @@ namespace Proyecto.ServiceReference1 {
     public partial class actualizarClienteResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public bool actualizarClienteResult;
+        public int actualizarClienteResult;
         
         public actualizarClienteResponseBody() {
         }
         
-        public actualizarClienteResponseBody(bool actualizarClienteResult) {
+        public actualizarClienteResponseBody(int actualizarClienteResult) {
             this.actualizarClienteResult = actualizarClienteResult;
         }
     }
@@ -1191,7 +1191,7 @@ namespace Proyecto.ServiceReference1 {
             return base.Channel.actualizarCliente(request);
         }
         
-        public bool actualizarCliente(int pDPI, string pnombre, string papellido, string pnit, string ptelefono, string pdir, string ptar) {
+        public int actualizarCliente(int pDPI, string pnombre, string papellido, string pnit, string ptelefono, string pdir, string ptar) {
             Proyecto.ServiceReference1.actualizarClienteRequest inValue = new Proyecto.ServiceReference1.actualizarClienteRequest();
             inValue.Body = new Proyecto.ServiceReference1.actualizarClienteRequestBody();
             inValue.Body.pDPI = pDPI;
