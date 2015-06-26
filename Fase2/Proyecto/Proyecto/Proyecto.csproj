@@ -124,13 +124,16 @@
     <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.SucursalesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.RegistrarClienteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.cargarCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.cargarEmpleadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.AgregarClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.CatResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\ServiceReference1\Service1.disco" />

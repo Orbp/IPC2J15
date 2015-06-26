@@ -114,13 +114,6 @@ namespace Proyecto.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Sucursales", ReplyAction="*")]
         System.Threading.Tasks.Task<Proyecto.ServiceReference1.SucursalesResponse> SucursalesAsync(Proyecto.ServiceReference1.SucursalesRequest request);
         
-        // CODEGEN: Generating message contract since element name nombre from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarCliente", ReplyAction="*")]
-        Proyecto.ServiceReference1.RegistrarClienteResponse RegistrarCliente(Proyecto.ServiceReference1.RegistrarClienteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarCliente", ReplyAction="*")]
-        System.Threading.Tasks.Task<Proyecto.ServiceReference1.RegistrarClienteResponse> RegistrarClienteAsync(Proyecto.ServiceReference1.RegistrarClienteRequest request);
-        
         // CODEGEN: Generating message contract since element name direccion from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/cargarEmpleado", ReplyAction="*")]
         Proyecto.ServiceReference1.cargarEmpleadoResponse cargarEmpleado(Proyecto.ServiceReference1.cargarEmpleadoRequest request);
@@ -134,6 +127,20 @@ namespace Proyecto.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/cargarCategoria", ReplyAction="*")]
         System.Threading.Tasks.Task<Proyecto.ServiceReference1.cargarCategoriaResponse> cargarCategoriaAsync(Proyecto.ServiceReference1.cargarCategoriaRequest request);
+        
+        // CODEGEN: Generating message contract since element name categoria from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Cat", ReplyAction="*")]
+        Proyecto.ServiceReference1.CatResponse Cat(Proyecto.ServiceReference1.CatRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Cat", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.CatResponse> CatAsync(Proyecto.ServiceReference1.CatRequest request);
+        
+        // CODEGEN: Generating message contract since element name pnombre from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AgregarCliente", ReplyAction="*")]
+        Proyecto.ServiceReference1.AgregarClienteResponse AgregarCliente(Proyecto.ServiceReference1.AgregarClienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AgregarCliente", ReplyAction="*")]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.AgregarClienteResponse> AgregarClienteAsync(Proyecto.ServiceReference1.AgregarClienteRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -986,110 +993,6 @@ namespace Proyecto.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class RegistrarClienteRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="RegistrarCliente", Namespace="http://tempuri.org/", Order=0)]
-        public Proyecto.ServiceReference1.RegistrarClienteRequestBody Body;
-        
-        public RegistrarClienteRequest() {
-        }
-        
-        public RegistrarClienteRequest(Proyecto.ServiceReference1.RegistrarClienteRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class RegistrarClienteRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int pdpi;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string nombre;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string apellido;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public long nit;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public long telefono;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string direccion;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public long tarjeta;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string usuario;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string contraseña;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string sucursal;
-        
-        public RegistrarClienteRequestBody() {
-        }
-        
-        public RegistrarClienteRequestBody(int pdpi, string nombre, string apellido, long nit, long telefono, string direccion, long tarjeta, string usuario, string contraseña, string sucursal) {
-            this.pdpi = pdpi;
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.nit = nit;
-            this.telefono = telefono;
-            this.direccion = direccion;
-            this.tarjeta = tarjeta;
-            this.usuario = usuario;
-            this.contraseña = contraseña;
-            this.sucursal = sucursal;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class RegistrarClienteResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="RegistrarClienteResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Proyecto.ServiceReference1.RegistrarClienteResponseBody Body;
-        
-        public RegistrarClienteResponse() {
-        }
-        
-        public RegistrarClienteResponse(Proyecto.ServiceReference1.RegistrarClienteResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class RegistrarClienteResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public bool RegistrarClienteResult;
-        
-        public RegistrarClienteResponseBody() {
-        }
-        
-        public RegistrarClienteResponseBody(bool RegistrarClienteResult) {
-            this.RegistrarClienteResult = RegistrarClienteResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class cargarEmpleadoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="cargarEmpleado", Namespace="http://tempuri.org/", Order=0)]
@@ -1205,6 +1108,178 @@ namespace Proyecto.ServiceReference1 {
     public partial class cargarCategoriaResponseBody {
         
         public cargarCategoriaResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CatRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Cat", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.CatRequestBody Body;
+        
+        public CatRequest() {
+        }
+        
+        public CatRequest(Proyecto.ServiceReference1.CatRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class CatRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string categoria;
+        
+        public CatRequestBody() {
+        }
+        
+        public CatRequestBody(string categoria) {
+            this.categoria = categoria;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CatResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CatResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.CatResponseBody Body;
+        
+        public CatResponse() {
+        }
+        
+        public CatResponse(Proyecto.ServiceReference1.CatResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class CatResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int CatResult;
+        
+        public CatResponseBody() {
+        }
+        
+        public CatResponseBody(int CatResult) {
+            this.CatResult = CatResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AgregarClienteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AgregarCliente", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.AgregarClienteRequestBody Body;
+        
+        public AgregarClienteRequest() {
+        }
+        
+        public AgregarClienteRequest(Proyecto.ServiceReference1.AgregarClienteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AgregarClienteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int pdpi;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string pnombre;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string papellido;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public long pnit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public long ptelefono;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string pdomicilio;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public long ptarjeta;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int psucursal;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string pusuario;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string pcontraseña;
+        
+        public AgregarClienteRequestBody() {
+        }
+        
+        public AgregarClienteRequestBody(int pdpi, string pnombre, string papellido, long pnit, long ptelefono, string pdomicilio, long ptarjeta, int psucursal, string pusuario, string pcontraseña) {
+            this.pdpi = pdpi;
+            this.pnombre = pnombre;
+            this.papellido = papellido;
+            this.pnit = pnit;
+            this.ptelefono = ptelefono;
+            this.pdomicilio = pdomicilio;
+            this.ptarjeta = ptarjeta;
+            this.psucursal = psucursal;
+            this.pusuario = pusuario;
+            this.pcontraseña = pcontraseña;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AgregarClienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AgregarClienteResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.AgregarClienteResponseBody Body;
+        
+        public AgregarClienteResponse() {
+        }
+        
+        public AgregarClienteResponse(Proyecto.ServiceReference1.AgregarClienteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AgregarClienteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool AgregarClienteResult;
+        
+        public AgregarClienteResponseBody() {
+        }
+        
+        public AgregarClienteResponseBody(bool AgregarClienteResult) {
+            this.AgregarClienteResult = AgregarClienteResult;
         }
     }
     
@@ -1562,49 +1637,6 @@ namespace Proyecto.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Proyecto.ServiceReference1.RegistrarClienteResponse Proyecto.ServiceReference1.Service1Soap.RegistrarCliente(Proyecto.ServiceReference1.RegistrarClienteRequest request) {
-            return base.Channel.RegistrarCliente(request);
-        }
-        
-        public bool RegistrarCliente(int pdpi, string nombre, string apellido, long nit, long telefono, string direccion, long tarjeta, string usuario, string contraseña, string sucursal) {
-            Proyecto.ServiceReference1.RegistrarClienteRequest inValue = new Proyecto.ServiceReference1.RegistrarClienteRequest();
-            inValue.Body = new Proyecto.ServiceReference1.RegistrarClienteRequestBody();
-            inValue.Body.pdpi = pdpi;
-            inValue.Body.nombre = nombre;
-            inValue.Body.apellido = apellido;
-            inValue.Body.nit = nit;
-            inValue.Body.telefono = telefono;
-            inValue.Body.direccion = direccion;
-            inValue.Body.tarjeta = tarjeta;
-            inValue.Body.usuario = usuario;
-            inValue.Body.contraseña = contraseña;
-            inValue.Body.sucursal = sucursal;
-            Proyecto.ServiceReference1.RegistrarClienteResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).RegistrarCliente(inValue);
-            return retVal.Body.RegistrarClienteResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Proyecto.ServiceReference1.RegistrarClienteResponse> Proyecto.ServiceReference1.Service1Soap.RegistrarClienteAsync(Proyecto.ServiceReference1.RegistrarClienteRequest request) {
-            return base.Channel.RegistrarClienteAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.RegistrarClienteResponse> RegistrarClienteAsync(int pdpi, string nombre, string apellido, long nit, long telefono, string direccion, long tarjeta, string usuario, string contraseña, string sucursal) {
-            Proyecto.ServiceReference1.RegistrarClienteRequest inValue = new Proyecto.ServiceReference1.RegistrarClienteRequest();
-            inValue.Body = new Proyecto.ServiceReference1.RegistrarClienteRequestBody();
-            inValue.Body.pdpi = pdpi;
-            inValue.Body.nombre = nombre;
-            inValue.Body.apellido = apellido;
-            inValue.Body.nit = nit;
-            inValue.Body.telefono = telefono;
-            inValue.Body.direccion = direccion;
-            inValue.Body.tarjeta = tarjeta;
-            inValue.Body.usuario = usuario;
-            inValue.Body.contraseña = contraseña;
-            inValue.Body.sucursal = sucursal;
-            return ((Proyecto.ServiceReference1.Service1Soap)(this)).RegistrarClienteAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Proyecto.ServiceReference1.cargarEmpleadoResponse Proyecto.ServiceReference1.Service1Soap.cargarEmpleado(Proyecto.ServiceReference1.cargarEmpleadoRequest request) {
             return base.Channel.cargarEmpleado(request);
         }
@@ -1650,6 +1682,74 @@ namespace Proyecto.ServiceReference1 {
             inValue.Body = new Proyecto.ServiceReference1.cargarCategoriaRequestBody();
             inValue.Body.direccion = direccion;
             return ((Proyecto.ServiceReference1.Service1Soap)(this)).cargarCategoriaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.CatResponse Proyecto.ServiceReference1.Service1Soap.Cat(Proyecto.ServiceReference1.CatRequest request) {
+            return base.Channel.Cat(request);
+        }
+        
+        public int Cat(string categoria) {
+            Proyecto.ServiceReference1.CatRequest inValue = new Proyecto.ServiceReference1.CatRequest();
+            inValue.Body = new Proyecto.ServiceReference1.CatRequestBody();
+            inValue.Body.categoria = categoria;
+            Proyecto.ServiceReference1.CatResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).Cat(inValue);
+            return retVal.Body.CatResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.CatResponse> Proyecto.ServiceReference1.Service1Soap.CatAsync(Proyecto.ServiceReference1.CatRequest request) {
+            return base.Channel.CatAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.CatResponse> CatAsync(string categoria) {
+            Proyecto.ServiceReference1.CatRequest inValue = new Proyecto.ServiceReference1.CatRequest();
+            inValue.Body = new Proyecto.ServiceReference1.CatRequestBody();
+            inValue.Body.categoria = categoria;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).CatAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.AgregarClienteResponse Proyecto.ServiceReference1.Service1Soap.AgregarCliente(Proyecto.ServiceReference1.AgregarClienteRequest request) {
+            return base.Channel.AgregarCliente(request);
+        }
+        
+        public bool AgregarCliente(int pdpi, string pnombre, string papellido, long pnit, long ptelefono, string pdomicilio, long ptarjeta, int psucursal, string pusuario, string pcontraseña) {
+            Proyecto.ServiceReference1.AgregarClienteRequest inValue = new Proyecto.ServiceReference1.AgregarClienteRequest();
+            inValue.Body = new Proyecto.ServiceReference1.AgregarClienteRequestBody();
+            inValue.Body.pdpi = pdpi;
+            inValue.Body.pnombre = pnombre;
+            inValue.Body.papellido = papellido;
+            inValue.Body.pnit = pnit;
+            inValue.Body.ptelefono = ptelefono;
+            inValue.Body.pdomicilio = pdomicilio;
+            inValue.Body.ptarjeta = ptarjeta;
+            inValue.Body.psucursal = psucursal;
+            inValue.Body.pusuario = pusuario;
+            inValue.Body.pcontraseña = pcontraseña;
+            Proyecto.ServiceReference1.AgregarClienteResponse retVal = ((Proyecto.ServiceReference1.Service1Soap)(this)).AgregarCliente(inValue);
+            return retVal.Body.AgregarClienteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto.ServiceReference1.AgregarClienteResponse> Proyecto.ServiceReference1.Service1Soap.AgregarClienteAsync(Proyecto.ServiceReference1.AgregarClienteRequest request) {
+            return base.Channel.AgregarClienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.ServiceReference1.AgregarClienteResponse> AgregarClienteAsync(int pdpi, string pnombre, string papellido, long pnit, long ptelefono, string pdomicilio, long ptarjeta, int psucursal, string pusuario, string pcontraseña) {
+            Proyecto.ServiceReference1.AgregarClienteRequest inValue = new Proyecto.ServiceReference1.AgregarClienteRequest();
+            inValue.Body = new Proyecto.ServiceReference1.AgregarClienteRequestBody();
+            inValue.Body.pdpi = pdpi;
+            inValue.Body.pnombre = pnombre;
+            inValue.Body.papellido = papellido;
+            inValue.Body.pnit = pnit;
+            inValue.Body.ptelefono = ptelefono;
+            inValue.Body.pdomicilio = pdomicilio;
+            inValue.Body.ptarjeta = ptarjeta;
+            inValue.Body.psucursal = psucursal;
+            inValue.Body.pusuario = pusuario;
+            inValue.Body.pcontraseña = pcontraseña;
+            return ((Proyecto.ServiceReference1.Service1Soap)(this)).AgregarClienteAsync(inValue);
         }
     }
 }

@@ -48,7 +48,7 @@ namespace WebServiceproyecto
         {
             int us = -1;
             SqlCommand comando = new SqlCommand();
-            comando.CommandText = "SELECT DPI FROM Cliente WHERE Usuario = '" + usuario + "' AND Contraseña = '" + contraseña + "'";
+            comando.CommandText = "SELECT DPI FROM Cliente WHERE Usuario = '" + usuario + "' AND Contraseña = '" + contraseña + "' AND Estado =" + 1;
             conexion = new SqlConnection(CadenaConexion);
             comando.Connection = conexion;
             conexion.Open();
@@ -324,39 +324,7 @@ namespace WebServiceproyecto
             return cat;
         }    
 
-        [WebMethod]
-        public bool RegistrarCliente(int pdpi, string nombre, string apellido, long nit, long telefono, string direccion, long tarjeta, string usuario, string contraseña, string sucursal)
-        {
-            SqlCommand comando = new SqlCommand();
-            comando.CommandText = "Select Id_sucursal From Sucursal where Direccion = '" + sucursal + "'";
-            conexion = new SqlConnection(CadenaConexion);
-            comando.Connection = conexion;
-            conexion.Open();
-            SqlDataReader lector = comando.ExecuteReader();
-            int idsu = 0;
-            if (lector.HasRows)
-            {
-                while (lector.Read())
-                {
-                    idsu = lector.GetInt32(0);
-                }
-            }
-
-            SqlCommand comando1 = new SqlCommand();
-            comando1.CommandText = "Insert Cliente(DPI, Nombre, Apellido, NIT, Telefono, Domicilio, Tarjeta, Casilla, Id_sucursal, Usuario, Contraseña, Estado)" +
-                "Values (" +pdpi+", '" + nombre +"' ,  '" + apellido +"' ," + nit + ", " + telefono+", '" +direccion+"'," + tarjeta+ ", 0, "+ idsu+", '"+usuario+"' + '"+ contraseña+"' , 0)";
-            comando1.Connection = conexion;
-            conexion.Open();
-            if (comando1.ExecuteNonQuery() != 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
+        
         [WebMethod]
         public void cargarEmpleado(String direccion)
         {
@@ -380,6 +348,48 @@ namespace WebServiceproyecto
             miComandoSQL.Connection = conexion;
             conexion.Open();
             miComandoSQL.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+        [WebMethod]
+
+        public int Cat(string categoria)
+        {
+            int sucursal = 0;
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "Select Id_sucursal From Sucursal Where Direccion = '" + categoria + "'";
+            conexion = new SqlConnection(CadenaConexion);
+            comando.Connection = conexion;
+            conexion.Open();
+            SqlDataReader lector = comando.ExecuteReader();
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    sucursal = lector.GetInt32(0);
+                }
+            }
+            conexion.Close();
+            return sucursal;
+        }
+
+        [WebMethod]
+
+        public bool AgregarCliente(int pdpi, string pnombre, string papellido, long pnit, long ptelefono, string pdomicilio, long ptarjeta, int psucursal, string pusuario, string pcontraseña)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText="Insert into Cliente (DPI, Nombre, Apellido, NIT, Telefono, Domicilio, Tarjeta, Casilla, Id_sucursal, Usuario, Contraseña, Estado) Values (" + pdpi + ", '" + pnombre+"', '"+ papellido + "', " + pnit+ ", " +ptelefono+", '"+pdomicilio+"', "+ptarjeta+", 0, "+ psucursal+", '" + pusuario+"', '" + pcontraseña+"', 0)";
+            conexion = new SqlConnection(CadenaConexion);
+            comando.Connection = conexion;
+            conexion.Open();
+            if (comando.ExecuteNonQuery() != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
             conexion.Close();
         }
     }

@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="DevolverEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DevolverEmpleadoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DevolverClienteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverDirector">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverDirectorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DevolverDirectorResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverAdministrador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverAdministradorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DevolverAdministradorResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverNombreCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pDPI" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverNombreClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DevolverNombreClienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverNombreEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pNumero" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverNombreEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DevolverNombreEmpleadoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverCasillaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pDPI" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverCasillaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DevolverCasillaClienteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParseoCSV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParseoCSVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParseoCSVResult" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AgregarCategoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="porcentaje" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgregarCategoriaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Categorias">
+        <s:complexType />
+      </s:element>
+      <s:element name="CategoriasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoriasResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverDatosCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pDPI" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverDatosClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DevolverDatosClienteResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pDPI" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pnombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="papellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptelefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pdir" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptar" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizarClienteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sucursales">
+        <s:complexType />
+      </s:element>
+      <s:element name="SucursalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SucursalesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargarEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargarEmpleadoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="cargarCategoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargarCategoriaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Cat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CatResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pdpi" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pnombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="papellido" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pnit" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ptelefono" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="pdomicilio" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ptarjeta" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="psucursal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pusuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcontraseña" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgregarClienteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerComision">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pidsede" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerComisionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerComisionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerSede">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psucursal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerSedeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ObtenerSedeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerCategoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pporcentaje" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ObtenerCategoriaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarPaquete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pnombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pdescripcion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pcategoria" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pcliente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pprecio" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="ppeso" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="psucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="plote" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarPaqueteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgregarPaqueteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Devolverpedidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pcasilla" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverpedidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DevolverpedidosResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DevolverEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:DevolverEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="DevolverEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolverEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevolverClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:DevolverCliente" />
+  </wsdl:message>
+  <wsdl:message name="DevolverClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolverClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevolverDirectorSoapIn">
+    <wsdl:part name="parameters" element="tns:DevolverDirector" />
+  </wsdl:message>
+  <wsdl:message name="DevolverDirectorSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolverDirectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevolverAdministradorSoapIn">
+    <wsdl:part name="parameters" element="tns:DevolverAdministrador" />
+  </wsdl:message>
+  <wsdl:message name="DevolverAdministradorSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolverAdministradorResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevolverNombreClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:DevolverNombreCliente" />
+  </wsdl:message>
+  <wsdl:message name="DevolverNombreClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolverNombreClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevolverNombreEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:DevolverNombreEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="DevolverNombreEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolverNombreEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevolverCasillaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:DevolverCasillaCliente" />
+  </wsdl:message>
+  <wsdl:message name="DevolverCasillaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolverCasillaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParseoCSVSoapIn">
+    <wsdl:part name="parameters" element="tns:ParseoCSV" />
+  </wsdl:message>
+  <wsdl:message name="ParseoCSVSoapOut">
+    <wsdl:part name="parameters" element="tns:ParseoCSVResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarCategoria" />
+  </wsdl:message>
+  <wsdl:message name="AgregarCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CategoriasSoapIn">
+    <wsdl:part name="parameters" element="tns:Categorias" />
+  </wsdl:message>
+  <wsdl:message name="CategoriasSoapOut">
+    <wsdl:part name="parameters" element="tns:CategoriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevolverDatosClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:DevolverDatosCliente" />
+  </wsdl:message>
+  <wsdl:message name="DevolverDatosClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolverDatosClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizarCliente" />
+  </wsdl:message>
+  <wsdl:message name="actualizarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SucursalesSoapIn">
+    <wsdl:part name="parameters" element="tns:Sucursales" />
+  </wsdl:message>
+  <wsdl:message name="SucursalesSoapOut">
+    <wsdl:part name="parameters" element="tns:SucursalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargarEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="cargarEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargarCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargarCategoria" />
+  </wsdl:message>
+  <wsdl:message name="cargarCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargarCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CatSoapIn">
+    <wsdl:part name="parameters" element="tns:Cat" />
+  </wsdl:message>
+  <wsdl:message name="CatSoapOut">
+    <wsdl:part name="parameters" element="tns:CatResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarCliente" />
+  </wsdl:message>
+  <wsdl:message name="AgregarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerComisionSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerComision" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerComisionSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerComisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSedeSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerSede" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSedeSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerSedeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerCategoria" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarPaqueteSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarPaquete" />
+  </wsdl:message>
+  <wsdl:message name="AgregarPaqueteSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarPaqueteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevolverpedidosSoapIn">
+    <wsdl:part name="parameters" element="tns:Devolverpedidos" />
+  </wsdl:message>
+  <wsdl:message name="DevolverpedidosSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolverpedidosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="DevolverEmpleado">
+      <wsdl:input message="tns:DevolverEmpleadoSoapIn" />
+      <wsdl:output message="tns:DevolverEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverCliente">
+      <wsdl:input message="tns:DevolverClienteSoapIn" />
+      <wsdl:output message="tns:DevolverClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverDirector">
+      <wsdl:input message="tns:DevolverDirectorSoapIn" />
+      <wsdl:output message="tns:DevolverDirectorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAdministrador">
+      <wsdl:input message="tns:DevolverAdministradorSoapIn" />
+      <wsdl:output message="tns:DevolverAdministradorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverNombreCliente">
+      <wsdl:input message="tns:DevolverNombreClienteSoapIn" />
+      <wsdl:output message="tns:DevolverNombreClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverNombreEmpleado">
+      <wsdl:input message="tns:DevolverNombreEmpleadoSoapIn" />
+      <wsdl:output message="tns:DevolverNombreEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverCasillaCliente">
+      <wsdl:input message="tns:DevolverCasillaClienteSoapIn" />
+      <wsdl:output message="tns:DevolverCasillaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParseoCSV">
+      <wsdl:input message="tns:ParseoCSVSoapIn" />
+      <wsdl:output message="tns:ParseoCSVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCategoria">
+      <wsdl:input message="tns:AgregarCategoriaSoapIn" />
+      <wsdl:output message="tns:AgregarCategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Categorias">
+      <wsdl:input message="tns:CategoriasSoapIn" />
+      <wsdl:output message="tns:CategoriasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverDatosCliente">
+      <wsdl:input message="tns:DevolverDatosClienteSoapIn" />
+      <wsdl:output message="tns:DevolverDatosClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarCliente">
+      <wsdl:input message="tns:actualizarClienteSoapIn" />
+      <wsdl:output message="tns:actualizarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sucursales">
+      <wsdl:input message="tns:SucursalesSoapIn" />
+      <wsdl:output message="tns:SucursalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargarEmpleado">
+      <wsdl:input message="tns:cargarEmpleadoSoapIn" />
+      <wsdl:output message="tns:cargarEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargarCategoria">
+      <wsdl:input message="tns:cargarCategoriaSoapIn" />
+      <wsdl:output message="tns:cargarCategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Cat">
+      <wsdl:input message="tns:CatSoapIn" />
+      <wsdl:output message="tns:CatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCliente">
+      <wsdl:input message="tns:AgregarClienteSoapIn" />
+      <wsdl:output message="tns:AgregarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerComision">
+      <wsdl:input message="tns:ObtenerComisionSoapIn" />
+      <wsdl:output message="tns:ObtenerComisionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSede">
+      <wsdl:input message="tns:ObtenerSedeSoapIn" />
+      <wsdl:output message="tns:ObtenerSedeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCategoria">
+      <wsdl:input message="tns:ObtenerCategoriaSoapIn" />
+      <wsdl:output message="tns:ObtenerCategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPaquete">
+      <wsdl:input message="tns:AgregarPaqueteSoapIn" />
+      <wsdl:output message="tns:AgregarPaqueteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Devolverpedidos">
+      <wsdl:input message="tns:DevolverpedidosSoapIn" />
+      <wsdl:output message="tns:DevolverpedidosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DevolverEmpleado">
+      <soap:operation soapAction="http://tempuri.org/DevolverEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverCliente">
+      <soap:operation soapAction="http://tempuri.org/DevolverCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverDirector">
+      <soap:operation soapAction="http://tempuri.org/DevolverDirector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAdministrador">
+      <soap:operation soapAction="http://tempuri.org/DevolverAdministrador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverNombreCliente">
+      <soap:operation soapAction="http://tempuri.org/DevolverNombreCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverNombreEmpleado">
+      <soap:operation soapAction="http://tempuri.org/DevolverNombreEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverCasillaCliente">
+      <soap:operation soapAction="http://tempuri.org/DevolverCasillaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParseoCSV">
+      <soap:operation soapAction="http://tempuri.org/ParseoCSV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCategoria">
+      <soap:operation soapAction="http://tempuri.org/AgregarCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Categorias">
+      <soap:operation soapAction="http://tempuri.org/Categorias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverDatosCliente">
+      <soap:operation soapAction="http://tempuri.org/DevolverDatosCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarCliente">
+      <soap:operation soapAction="http://tempuri.org/actualizarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sucursales">
+      <soap:operation soapAction="http://tempuri.org/Sucursales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/cargarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarCategoria">
+      <soap:operation soapAction="http://tempuri.org/cargarCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cat">
+      <soap:operation soapAction="http://tempuri.org/Cat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCliente">
+      <soap:operation soapAction="http://tempuri.org/AgregarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerComision">
+      <soap:operation soapAction="http://tempuri.org/ObtenerComision" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSede">
+      <soap:operation soapAction="http://tempuri.org/ObtenerSede" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCategoria">
+      <soap:operation soapAction="http://tempuri.org/ObtenerCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPaquete">
+      <soap:operation soapAction="http://tempuri.org/AgregarPaquete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Devolverpedidos">
+      <soap:operation soapAction="http://tempuri.org/Devolverpedidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DevolverEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/DevolverEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverCliente">
+      <soap12:operation soapAction="http://tempuri.org/DevolverCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverDirector">
+      <soap12:operation soapAction="http://tempuri.org/DevolverDirector" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAdministrador">
+      <soap12:operation soapAction="http://tempuri.org/DevolverAdministrador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverNombreCliente">
+      <soap12:operation soapAction="http://tempuri.org/DevolverNombreCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverNombreEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/DevolverNombreEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverCasillaCliente">
+      <soap12:operation soapAction="http://tempuri.org/DevolverCasillaCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParseoCSV">
+      <soap12:operation soapAction="http://tempuri.org/ParseoCSV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCategoria">
+      <soap12:operation soapAction="http://tempuri.org/AgregarCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Categorias">
+      <soap12:operation soapAction="http://tempuri.org/Categorias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverDatosCliente">
+      <soap12:operation soapAction="http://tempuri.org/DevolverDatosCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarCliente">
+      <soap12:operation soapAction="http://tempuri.org/actualizarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sucursales">
+      <soap12:operation soapAction="http://tempuri.org/Sucursales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/cargarEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarCategoria">
+      <soap12:operation soapAction="http://tempuri.org/cargarCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cat">
+      <soap12:operation soapAction="http://tempuri.org/Cat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCliente">
+      <soap12:operation soapAction="http://tempuri.org/AgregarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerComision">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerComision" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSede">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerSede" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCategoria">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPaquete">
+      <soap12:operation soapAction="http://tempuri.org/AgregarPaquete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Devolverpedidos">
+      <soap12:operation soapAction="http://tempuri.org/Devolverpedidos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://localhost:9171/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://localhost:9171/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
