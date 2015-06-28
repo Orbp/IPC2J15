@@ -20,6 +20,50 @@ namespace Proyecto.ServiceReference1 {
     public class ArrayOfString : System.Collections.Generic.List<string> {
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Producto", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Producto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int idproductoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int idproducto {
+            get {
+                return this.idproductoField;
+            }
+            set {
+                if ((this.idproductoField.Equals(value) != true)) {
+                    this.idproductoField = value;
+                    this.RaisePropertyChanged("idproducto");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.Service1Soap")]
     public interface Service1Soap {
@@ -1680,12 +1724,12 @@ namespace Proyecto.ServiceReference1 {
     public partial class DevolverpedidosResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Proyecto.ServiceReference1.ArrayOfString DevolverpedidosResult;
+        public Proyecto.ServiceReference1.Producto[] DevolverpedidosResult;
         
         public DevolverpedidosResponseBody() {
         }
         
-        public DevolverpedidosResponseBody(Proyecto.ServiceReference1.ArrayOfString DevolverpedidosResult) {
+        public DevolverpedidosResponseBody(Proyecto.ServiceReference1.Producto[] DevolverpedidosResult) {
             this.DevolverpedidosResult = DevolverpedidosResult;
         }
     }
@@ -2280,7 +2324,7 @@ namespace Proyecto.ServiceReference1 {
             return base.Channel.Devolverpedidos(request);
         }
         
-        public Proyecto.ServiceReference1.ArrayOfString Devolverpedidos(int pcasilla) {
+        public Proyecto.ServiceReference1.Producto[] Devolverpedidos(int pcasilla) {
             Proyecto.ServiceReference1.DevolverpedidosRequest inValue = new Proyecto.ServiceReference1.DevolverpedidosRequest();
             inValue.Body = new Proyecto.ServiceReference1.DevolverpedidosRequestBody();
             inValue.Body.pcasilla = pcasilla;

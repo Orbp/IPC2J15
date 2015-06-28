@@ -151,6 +151,9 @@
     <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.ObtenerComisionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.Producto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\ServiceReference1\Service1.disco" />
     <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
     <None Include="Service References\ServiceReference1\configuration.svcinfo" />

@@ -1,16 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Aplicacion/master.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Proyecto.Aplicacion.Default" %>
+
 <asp:Content ID="mens" ContentPlaceHolderID="menus" runat="server">
-    <div id ="topbar">
-        <div id ="topnav">
+    <div id="topbar">
+        <div id="topnav">
             <ul>
-                <li class ="active"><a href ="Default.aspx">Inicio</a></li>
+                <li class="active"><a href="Default.aspx">Inicio</a></li>
                 <li><a href="Login.aspx">Inicio de sesion</a></li>
-                <li><a href ="Registro.aspx">Registro de cliente</a></li>
+                <li><a href="Registro.aspx">Registro de cliente</a></li>
             </ul>
         </div>
         <br class="clear" />
     </div>
-    
+
 </asp:Content>
 
 

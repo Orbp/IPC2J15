@@ -472,12 +472,12 @@ namespace WebServiceproyecto
         }
 
         [WebMethod]
-        public List<string> Devolverpedidos(int pcasilla)
+        public List<Producto> Devolverpedidos(int pcasilla)
         {
-            List<string> ped = new List<string>();
+            List<Producto> pedidos = new List<Producto>();
             SqlCommand comando = new SqlCommand();
+            comando.CommandText = "Select Id_producto From Producto where Id_Cliente = " + pcasilla;
             conexion = new SqlConnection(CadenaConexion);
-            comando.CommandText = "Select * From Producto where Id_Cliente = " + pcasilla;
             comando.Connection = conexion;
             conexion.Open();
             SqlDataReader lector = comando.ExecuteReader();
@@ -485,11 +485,14 @@ namespace WebServiceproyecto
             {
                 while (lector.Read())
                 {
-                    ped.Add(Convert.ToString(lector.GetInt32(0)));
+                    Producto p = new Producto();
+                    p.idproducto = lector.GetInt32(0);
+                    pedidos.Add(p);
                 }
             }
-            conexion.Close();
-            return ped;
+            return pedidos;
         }
+
+        
     }
 }

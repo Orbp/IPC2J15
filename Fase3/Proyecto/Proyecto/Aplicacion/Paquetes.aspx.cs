@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Proyecto.ServiceReference1;
 
 namespace Proyecto.Aplicacion
 {
@@ -15,6 +16,7 @@ namespace Proyecto.Aplicacion
             Response.Write(Convert.ToInt32(Session["Onl"]));
             int num = Convert.ToInt32(Session["Onl"]);
             LabelNombre.Text += sr.DevolverNombreCliente(num);
+
             
         }
     }
